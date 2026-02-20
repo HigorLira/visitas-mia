@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 
+
 :root {
   --bg:#0a0e1a; --panel:#111827; --panel2:#1a2235; --panel3:#222f45;
   --accent:#00d4aa; --accent2:#0088ff; --warn:#ff6b35; --danger:#ef4444;
@@ -495,45 +496,80 @@ code.notif-var {
 code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
 
 
-/* ── LOGIN ──────────────────────────────────────────────── */
+/* ── TELA DE LOGIN ─────────── */
 #login-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;}
 #login-screen.hidden{display:none;}
-.login-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;width:380px;display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 80px rgba(0,0,0,0.5);}
-.login-logo{display:flex;align-items:center;gap:12px;margin-bottom:4px;}
-.login-logo-mark{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.login-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:44px;width:380px;display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 80px rgba(0,0,0,0.55);}
+.login-logo{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.login-logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .login-title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.5px;}
 .login-sub{font-size:13px;color:var(--muted);margin-top:2px;}
 .login-field{display:flex;flex-direction:column;gap:7px;}
 .login-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-.login-input{padding:10px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+.login-input{padding:11px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
 .login-input:focus{border-color:var(--accent);}
 .login-input::placeholder{color:var(--muted);}
-.login-btn{width:100%;padding:12px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;transition:opacity 0.2s;margin-top:4px;}
+.login-btn{width:100%;padding:13px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;transition:opacity 0.2s;margin-top:2px;}
 .login-btn:hover{opacity:0.88;}
-.login-btn:disabled{opacity:0.5;cursor:not-allowed;}
-.login-err{font-size:12px;color:var(--danger);text-align:center;padding:8px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;display:none;}
+.login-btn:disabled{opacity:0.45;cursor:not-allowed;}
+.login-err{font-size:12px;color:var(--danger);text-align:center;padding:9px 14px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;display:none;}
 .login-err.visible{display:block;}
-/* ── LOADING ─────────────────────────────────────────────── */
+/* ── LOADING ─────────── */
 #app-loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:8000;gap:16px;}
 #app-loading.hidden{display:none;}
 .loading-spinner{width:40px;height:40px;border-radius:50%;border:3px solid var(--border2);border-top-color:var(--accent);animation:spin 0.8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .loading-text{font-size:13px;color:var(--muted);}
-/* ── USER BADGE ──────────────────────────────────────────── */
+/* ── HEADER USER / SYNC ─────────── */
 .header-user{display:flex;align-items:center;gap:10px;padding:5px 5px 5px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:30px;cursor:pointer;transition:border-color 0.2s;}
 .header-user:hover{border-color:var(--accent);}
 .header-user-name{font-size:12px;font-weight:500;}
 .header-user-role{font-size:10px;color:var(--muted);}
 .header-user-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:12px;font-weight:600;color:#fff;}
-/* ── SYNC DOT ────────────────────────────────────────────── */
 .sync-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--muted);transition:background 0.4s;}
 .sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite;}
 .sync-dot.synced{background:var(--accent);}
 .sync-dot.error{background:var(--danger);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
+
+
+#login-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;}
+#login-screen.hidden{display:none;}
+.login-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:44px;width:380px;display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 80px rgba(0,0,0,0.55);}
+.login-logo{display:flex;align-items:center;gap:12px;margin-bottom:6px;}
+.login-logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
+.login-title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.5px;}
+.login-sub{font-size:13px;color:var(--muted);margin-top:2px;}
+.login-field{display:flex;flex-direction:column;gap:7px;}
+.login-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
+.login-input{padding:11px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+.login-input:focus{border-color:var(--accent);}
+.login-input::placeholder{color:var(--muted);}
+.login-btn{width:100%;padding:13px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;transition:opacity 0.2s;margin-top:2px;}
+.login-btn:hover{opacity:0.88;}
+.login-btn:disabled{opacity:0.45;cursor:not-allowed;}
+.login-err{font-size:12px;color:var(--danger);text-align:center;padding:9px 14px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;display:none;}
+.login-err.visible{display:block;}
+#app-loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:8000;gap:16px;}
+#app-loading.hidden{display:none;}
+.loading-spinner{width:40px;height:40px;border-radius:50%;border:3px solid var(--border2);border-top-color:var(--accent);animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.loading-text{font-size:13px;color:var(--muted);}
+.header-user{display:flex;align-items:center;gap:10px;padding:5px 5px 5px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:30px;cursor:pointer;transition:border-color 0.2s;}
+.header-user:hover{border-color:var(--accent);}
+.header-user-name{font-size:12px;font-weight:500;}
+.header-user-role{font-size:10px;color:var(--muted);}
+.header-user-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:12px;font-weight:600;color:#fff;}
+.sync-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--muted);transition:background 0.4s;}
+.sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite;}
+.sync-dot.synced{background:var(--accent);}
+.sync-dot.error{background:var(--danger);}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
 </style>
 </head>
-
+<body>
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">
@@ -552,13 +588,30 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     <button class="login-btn" id="loginBtn" onclick="doLogin()">Entrar</button>
   </div>
 </div>
-<div id="app-loading">
+
+<div id="app-loading" class="hidden">
   <div class="loading-spinner"></div>
   <div class="loading-text" id="loadingText">Carregando sistema...</div>
 </div>
-<body style="display:none;" id="app-body">
+<div id="app-body" style="display:none;flex:1;flex-direction:column;height:100vh;overflow:hidden;">
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-mark">📍</div>
+      <div><div class="login-title">VisitaFiliais</div><div class="login-sub">Sistema de Gestão de Visitas</div></div>
+    </div>
+    <div class="login-field"><label class="login-label">E-mail</label><input class="login-input" type="email" id="loginEmail" placeholder="seu@email.com" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+    <div class="login-field"><label class="login-label">Senha</label><input class="login-input" type="password" id="loginPass" placeholder="Sua senha" onkeydown="if(event.key==='Enter')doLogin()"/></div>
+    <div class="login-err" id="loginErr"></div>
+    <button class="login-btn" id="loginBtn" onclick="doLogin()">Entrar</button>
+  </div>
+</div>
+<div id="app-loading" class="hidden">
+  <div class="loading-spinner"></div>
+  <div class="loading-text" id="loadingText">Carregando sistema...</div>
+</div>
 
-
+<div id="app-body" style="display:none;flex:1;flex-direction:column;height:100vh;overflow:hidden;">
 <header>
   <div class="logo">
     <div class="logo-mark">📍</div>
@@ -575,7 +628,7 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     <div class="stat"><div class="stat-num" id="pendingCount">0</div><div class="stat-label">Pendentes</div></div>
   </div>
   <div class="header-actions" style="display:flex;align-items:center;gap:10px;">
-        <div style="display:flex;align-items:center;gap:6px;cursor:default;" title="Status de sincronização">
+        <div style="display:flex;align-items:center;gap:6px;cursor:default;" title="Sincronização">
           <div class="sync-dot" id="syncDot"></div>
           <span id="syncLabel" style="font-size:10px;color:var(--muted);"></span>
         </div>
@@ -1206,18 +1259,18 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     </div>
   </div>
 </div>
-
-
-</body>
+</div>
+</div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
+
 // ╔══════════════════════════════════════════════════════════╗
-// ║   !! SUBSTITUA PELAS CREDENCIAIS DO SEU PROJETO !!       ║
-// ║   Firebase Console → Configurações → Seus apps → SDK     ║
+// ║  SUBSTITUA PELOS VALORES DO SEU PROJETO FIREBASE         ║
+// ║  Firebase Console → ⚙ Configurações → Seus apps → </>   ║
 // ╚══════════════════════════════════════════════════════════╝
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCxPFx-VRppt9YA_Gssg9eLCEuWoSPhuGo",
@@ -1227,17 +1280,25 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "745373188746",
   appId:             "1:745373188746:web:954bf576c821b90b266373"
 };
-firebase.initializeApp(FIREBASE_CONFIG);
-const auth = firebase.auth();
-const db   = firebase.firestore();
-db.enablePersistence({ synchronizeTabs:true }).catch(()=>{});
 
-// ── ESTADO GLOBAL ─────────────────────────────────────────
-let FILIAIS  = [];
-let USERS    = [];
-let VISITS   = [];
-let PROFILES = {};
-let CONFIG   = {
+// ── Inicialização protegida ──────────────────────────────────
+let auth, db;
+try {
+  firebase.initializeApp(FIREBASE_CONFIG);
+  auth = firebase.auth();
+  db   = firebase.firestore();
+  db.enablePersistence({ synchronizeTabs: true }).catch(() => {});
+} catch(e) {
+  // Config inválida: mostra erro na tela de login
+  console.error('Firebase init error:', e);
+  document.getElementById('loginErr').textContent =
+    'Erro de configuração Firebase. Verifique as credenciais no index.html.';
+  document.getElementById('loginErr').classList.add('visible');
+}
+
+// ── Estado global ─────────────────────────────────────────────
+let FILIAIS = [], USERS = [], VISITS = [], PROFILES = {};
+let CONFIG = {
   ok:      { name:'Regular',  color:'#00d4aa', days:null },
   visited: { name:'Visitada', color:'#0088ff', days:30   },
   pending: { name:'Pendente', color:'#ff6b35', days:60   },
@@ -1249,92 +1310,100 @@ let NOTIF_CONFIG = {
   tg:{ enabled:false, botToken:'', chatId:'', webhookUrl:'' },
   msgTemplate:''
 };
-let CURRENT_USER   = null;
-let activeRecordId = null;
-let visitTags      = [];
-let visitDemandasModal = [];
-let activeFilter   = 'all', activeFilialIndex = null, markers = [];
+let CURRENT_USER = null, activeRecordId = null;
+let visitTags = [], visitDemandasModal = [];
+let activeFilter = 'all', activeFilialIndex = null, markers = [];
 let mapStatusFilter = 'all', mapUfFilter = null;
-let map;
+let map, demandaIdCounter = 0, nextUserId = 1;
 
-// ── SYNC INDICATOR ────────────────────────────────────────
-function setSyncState(state, label=''){
-  const dot=document.getElementById('syncDot');
-  const lbl=document.getElementById('syncLabel');
-  if(!dot)return;
-  dot.className='sync-dot '+state;
-  if(lbl)lbl.textContent=label;
+// ── Sync indicator ────────────────────────────────────────────
+function setSyncState(state, label = '') {
+  const dot = document.getElementById('syncDot');
+  const lbl = document.getElementById('syncLabel');
+  if (dot) dot.className = 'sync-dot ' + state;
+  if (lbl) lbl.textContent = label;
 }
 
-// ── LOGIN / LOGOUT ────────────────────────────────────────
-async function doLogin(){
-  const email=document.getElementById('loginEmail').value.trim();
-  const pass=document.getElementById('loginPass').value;
-  const btn=document.getElementById('loginBtn');
-  const err=document.getElementById('loginErr');
+// ── Login / Logout ────────────────────────────────────────────
+async function doLogin() {
+  if (!auth) {
+    document.getElementById('loginErr').textContent = 'Firebase não inicializado. Verifique as credenciais.';
+    document.getElementById('loginErr').classList.add('visible');
+    return;
+  }
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass  = document.getElementById('loginPass').value;
+  const btn   = document.getElementById('loginBtn');
+  const err   = document.getElementById('loginErr');
   err.classList.remove('visible');
-  btn.disabled=true; btn.textContent='Entrando...';
+  btn.disabled = true; btn.textContent = 'Entrando...';
   try {
-    await auth.signInWithEmailAndPassword(email,pass);
-  } catch(e){
-    const msgs={'auth/user-not-found':'Usuário não encontrado.','auth/wrong-password':'Senha incorreta.',
-      'auth/invalid-email':'E-mail inválido.','auth/too-many-requests':'Muitas tentativas. Tente mais tarde.',
-      'auth/invalid-credential':'E-mail ou senha incorretos.'};
-    err.textContent=msgs[e.code]||('Erro: '+e.message);
+    await auth.signInWithEmailAndPassword(email, pass);
+  } catch(e) {
+    const msgs = {
+      'auth/user-not-found':     'Usuário não encontrado.',
+      'auth/wrong-password':     'Senha incorreta.',
+      'auth/invalid-email':      'E-mail inválido.',
+      'auth/too-many-requests':  'Muitas tentativas. Tente mais tarde.',
+      'auth/invalid-credential': 'E-mail ou senha incorretos.',
+    };
+    err.textContent = msgs[e.code] || ('Erro: ' + e.message);
     err.classList.add('visible');
-    btn.disabled=false; btn.textContent='Entrar';
+    btn.disabled = false; btn.textContent = 'Entrar';
   }
 }
-async function doLogout(){
-  if(!confirm('Sair do sistema?'))return;
-  await auth.signOut();
+
+async function doLogout() {
+  if (!confirm('Sair do sistema?')) return;
+  if (auth) await auth.signOut();
 }
 
-// ── AUTH STATE ────────────────────────────────────────────
-auth.onAuthStateChanged(async(fbUser)=>{
-  if(!fbUser){ showLoginScreen(); return; }
-  try {
-    const snap=await db.collection('users').doc(fbUser.uid).get();
-    if(!snap.exists||snap.data().active===false){
-      showLoginScreen('Conta inativa. Contacte o administrador.');
-      await auth.signOut(); return;
+// ── Auth state observer ───────────────────────────────────────
+// Só registra se firebase foi inicializado com sucesso
+if (auth) {
+  auth.onAuthStateChanged(async (fbUser) => {
+    if (!fbUser) {
+      // Deslogado: mostra tela de login, esconde app
+      document.getElementById('app-loading').classList.add('hidden');
+      document.getElementById('app-body').style.display = 'none';
+      document.getElementById('login-screen').classList.remove('hidden');
+      const btn = document.getElementById('loginBtn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Entrar'; }
+      return;
     }
-    CURRENT_USER={ uid:fbUser.uid, ...snap.data() };
-    updateHeaderUser();
-    await bootApp();
-  } catch(e){ showLoginScreen('Erro ao carregar perfil: '+e.message); }
-});
-
-function showLoginScreen(msg){
-  document.getElementById('app-loading').classList.add('hidden');
-  document.getElementById('app-body').style.display='none';
-  document.getElementById('login-screen').classList.remove('hidden');
-  const btn=document.getElementById('loginBtn');
-  if(btn){btn.disabled=false;btn.textContent='Entrar';}
-  if(msg){const el=document.getElementById('loginErr');el.textContent=msg;el.classList.add('visible');}
+    // Logado: carrega perfil e inicia app
+    try {
+      document.getElementById('login-screen').classList.add('hidden');
+      document.getElementById('app-loading').classList.remove('hidden');
+      const snap = await db.collection('users').doc(fbUser.uid).get();
+      if (!snap.exists || snap.data().active === false) {
+        await auth.signOut(); return;
+      }
+      CURRENT_USER = { uid: fbUser.uid, ...snap.data() };
+      await bootApp();
+    } catch(e) {
+      document.getElementById('app-loading').classList.add('hidden');
+      document.getElementById('login-screen').classList.remove('hidden');
+      const err = document.getElementById('loginErr');
+      err.textContent = 'Erro ao carregar perfil: ' + e.message;
+      err.classList.add('visible');
+      const btn = document.getElementById('loginBtn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Entrar'; }
+    }
+  });
 }
 
-function updateHeaderUser(){
-  if(!CURRENT_USER)return;
-  document.getElementById('headerUserName').textContent=CURRENT_USER.name||CURRENT_USER.email;
-  const meta=ROLE_META[CURRENT_USER.role]||{};
-  document.getElementById('headerUserRole').textContent=(meta.icon||'')+' '+(meta.label||CURRENT_USER.role);
-  const av=document.getElementById('headerUserAvatar');
-  av.textContent=getInitials(CURRENT_USER.name||CURRENT_USER.email);
-  av.style.background=meta.bg||'#6b7a99';
-}
-
-// ── BOOT ─────────────────────────────────────────────────
-async function bootApp(){
-  document.getElementById('login-screen').classList.add('hidden');
-  document.getElementById('app-loading').classList.remove('hidden');
-  document.getElementById('app-body').style.display='';
-  setSyncState('syncing','Carregando...');
+// ── Boot: carrega todos os dados do Firestore ─────────────────
+async function bootApp() {
+  document.getElementById('loadingText').textContent = 'Carregando dados...';
+  setSyncState('syncing', 'Carregando...');
   try {
-    await Promise.all([loadFiliais(),loadUsers(),loadProfiles(),loadConfig(),loadVisitas()]);
+    await Promise.all([loadFiliais(), loadUsers(), loadProfiles(), loadConfig(), loadVisitas()]);
     setupRealtimeListeners();
     document.getElementById('app-loading').classList.add('hidden');
-    setSyncState('synced','Sincronizado');
+    document.getElementById('app-body').style.display = 'flex';
+    setSyncState('synced', 'Sincronizado');
+    updateHeaderUser();
     initMap();
     rebuildMarkers();
     buildUfChips();
@@ -1342,314 +1411,367 @@ async function bootApp(){
     updateStats();
     await loadNotifConfig();
     await checkDraftBanner();
-  } catch(e){
-    setSyncState('error','Erro');
-    document.getElementById('app-loading').innerHTML=
-      '<div style="color:var(--danger);text-align:center;padding:32px;">Erro ao carregar: '+e.message+
-      '<br><br><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;border-radius:8px;border:1px solid var(--danger);background:transparent;color:var(--danger);cursor:pointer;font-family:Inter,sans-serif;">Recarregar</button></div>';
+  } catch(e) {
+    setSyncState('error', 'Erro');
+    document.getElementById('loadingText').innerHTML =
+      'Erro ao carregar: ' + e.message +
+      '<br><br><button onclick="location.reload()" ' +
+      'style="margin-top:12px;padding:8px 20px;border-radius:8px;border:1px solid var(--danger);' +
+      'background:transparent;color:var(--danger);cursor:pointer;font-family:Inter,sans-serif;font-size:13px;">' +
+      'Recarregar</button>';
+    console.error('Boot error:', e);
   }
 }
 
-// ── LOADERS ──────────────────────────────────────────────
-async function loadFiliais(){
-  const snap=await db.collection('filiais').orderBy('state').orderBy('city').get();
-  FILIAIS=snap.docs.map(d=>({id:d.id,...d.data()}));
+function updateHeaderUser() {
+  if (!CURRENT_USER) return;
+  document.getElementById('headerUserName').textContent = CURRENT_USER.name || CURRENT_USER.email;
+  const meta = ROLE_META[CURRENT_USER.role] || {};
+  document.getElementById('headerUserRole').textContent = (meta.icon || '') + ' ' + (meta.label || CURRENT_USER.role);
+  const av = document.getElementById('headerUserAvatar');
+  if (av) { av.textContent = getInitials(CURRENT_USER.name || CURRENT_USER.email); av.style.background = meta.bg || '#6b7a99'; }
 }
-async function loadUsers(){
-  const snap=await db.collection('users').get();
-  USERS=snap.docs.map(d=>({id:d.id,...d.data()}));
+
+// ── Loaders ───────────────────────────────────────────────────
+async function loadFiliais() {
+  const snap = await db.collection('filiais').orderBy('state').orderBy('city').get();
+  FILIAIS = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 }
-async function loadProfiles(){
-  const snap=await db.collection('profiles').get();
-  PROFILES={};
-  snap.docs.forEach(d=>{PROFILES[d.id]=d.data();});
+async function loadUsers() {
+  const snap = await db.collection('users').get();
+  USERS = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 }
-async function loadConfig(){
-  const snap=await db.collection('config').doc('global').get();
-  if(snap.exists) CONFIG={...CONFIG,...snap.data()};
+async function loadProfiles() {
+  const snap = await db.collection('profiles').get();
+  PROFILES = {};
+  snap.docs.forEach(d => { PROFILES[d.id] = d.data(); });
 }
-async function loadVisitas(){
-  let q=db.collection('visitas').orderBy('criadoEm','desc');
-  if(CURRENT_USER.role==='coord') q=q.where('autorUid','==',CURRENT_USER.uid);
-  const snap=await q.limit(300).get();
-  VISITS=snap.docs.map(d=>{
-    const v={id:d.id,...d.data()};
-    v.filialIdx=FILIAIS.findIndex(f=>f.id===v.filialId);
+async function loadConfig() {
+  const snap = await db.collection('config').doc('global').get();
+  if (snap.exists) {
+    const d = snap.data();
+    if (d.ok_name)      CONFIG.ok.name      = d.ok_name;
+    if (d.ok_color)     CONFIG.ok.color     = d.ok_color;
+    if (d.visited_name)  CONFIG.visited.name  = d.visited_name;
+    if (d.visited_color) CONFIG.visited.color = d.visited_color;
+    if (d.visited_days)  CONFIG.visited.days  = d.visited_days;
+    if (d.pending_name)  CONFIG.pending.name  = d.pending_name;
+    if (d.pending_color) CONFIG.pending.color = d.pending_color;
+    if (d.pending_days)  CONFIG.pending.days  = d.pending_days;
+  }
+}
+async function loadVisitas() {
+  let q = db.collection('visitas').orderBy('criadoEm', 'desc');
+  if (CURRENT_USER.role === 'coord') q = q.where('autorUid', '==', CURRENT_USER.uid);
+  const snap = await q.limit(300).get();
+  VISITS = snap.docs.map(d => {
+    const v = { id: d.id, ...d.data() };
+    v.filialIdx = FILIAIS.findIndex(f => f.id === v.filialId);
     return v;
   });
 }
-async function loadNotifConfig(){
+async function loadNotifConfig() {
   try {
-    const snap=await db.collection('notif_config').doc('global').get();
-    if(snap.exists) NOTIF_CONFIG={...NOTIF_CONFIG,...snap.data()};
-  } catch(e){}
+    const snap = await db.collection('notif_config').doc('global').get();
+    if (snap.exists) {
+      const d = snap.data();
+      NOTIF_CONFIG.globalEnabled = d.globalEnabled || false;
+      NOTIF_CONFIG.recipients    = d.recipients    || [];
+      NOTIF_CONFIG.wa  = { enabled: d.wa_enabled||false, webhookUrl: d.wa_webhookUrl||'', token: d.wa_token||'', target: d.wa_target||'' };
+      NOTIF_CONFIG.tg  = { enabled: d.tg_enabled||false, botToken: d.tg_botToken||'', chatId: d.tg_chatId||'', webhookUrl: d.tg_webhookUrl||'' };
+      NOTIF_CONFIG.msgTemplate = d.msgTemplate || '';
+    }
+  } catch(e) {}
   applyNotifConfigToUI();
 }
 
-// ── REALTIME LISTENERS ────────────────────────────────────
-function setupRealtimeListeners(){
-  db.collection('filiais').onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const item={id:c.doc.id,...c.doc.data()};
-      if(c.type==='added'||c.type==='modified'){
-        const i=FILIAIS.findIndex(f=>f.id===item.id);
-        if(i>=0)FILIAIS[i]=item; else FILIAIS.push(item);
-      } else { FILIAIS=FILIAIS.filter(f=>f.id!==item.id); }
+// ── Realtime listeners ────────────────────────────────────────
+function setupRealtimeListeners() {
+  db.collection('filiais').onSnapshot(snap => {
+    snap.docChanges().forEach(c => {
+      const item = { id: c.doc.id, ...c.doc.data() };
+      if (c.type === 'added' || c.type === 'modified') {
+        const i = FILIAIS.findIndex(f => f.id === item.id);
+        if (i >= 0) FILIAIS[i] = item; else FILIAIS.push(item);
+      } else { FILIAIS = FILIAIS.filter(f => f.id !== item.id); }
     });
-    rebuildMarkers();renderList();updateStats();
-    if(document.getElementById('panel-filiais')?.classList.contains('active')) renderFilialTable();
-    setSyncState('synced','Sincronizado');
+    rebuildMarkers(); renderList(); updateStats();
+    if (document.getElementById('panel-filiais')?.classList.contains('active')) renderFilialTable();
+    setSyncState('synced', 'Sincronizado');
   });
 
-  let vq=db.collection('visitas').orderBy('criadoEm','desc').limit(300);
-  if(CURRENT_USER.role==='coord') vq=vq.where('autorUid','==',CURRENT_USER.uid);
-  vq.onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const raw={id:c.doc.id,...c.doc.data()};
-      raw.filialIdx=FILIAIS.findIndex(f=>f.id===raw.filialId);
-      if(c.type==='added'||c.type==='modified'){
-        const i=VISITS.findIndex(v=>v.id===raw.id);
-        if(i>=0)VISITS[i]=raw; else VISITS.unshift(raw);
+  let vq = db.collection('visitas').orderBy('criadoEm', 'desc').limit(300);
+  if (CURRENT_USER.role === 'coord') vq = vq.where('autorUid', '==', CURRENT_USER.uid);
+  vq.onSnapshot(snap => {
+    snap.docChanges().forEach(c => {
+      const raw = { id: c.doc.id, ...c.doc.data() };
+      raw.filialIdx = FILIAIS.findIndex(f => f.id === raw.filialId);
+      if (c.type === 'added' || c.type === 'modified') {
+        const i = VISITS.findIndex(v => v.id === raw.id);
+        if (i >= 0) VISITS[i] = raw; else VISITS.unshift(raw);
       } else {
-        VISITS=VISITS.filter(v=>v.id!==raw.id);
-        if(activeRecordId===raw.id){
-          activeRecordId=null;
-          const el=document.getElementById('recDetail');
-          if(el)el.innerHTML='<div class="rec-empty"><div class="rec-empty-icon">📋</div><div class="rec-empty-text">Registro removido.</div></div>';
+        VISITS = VISITS.filter(v => v.id !== raw.id);
+        if (activeRecordId === raw.id) {
+          activeRecordId = null;
+          const el = document.getElementById('recDetail');
+          if (el) el.innerHTML = '<div class="rec-empty"><div class="rec-empty-icon">📋</div><div class="rec-empty-text">Registro removido.</div></div>';
         }
       }
     });
-    renderRecordsList();updateStats();
-    setSyncState('synced','Sincronizado');
+    renderRecordsList(); updateStats(); setSyncState('synced', 'Sincronizado');
   });
 
-  db.collection('users').onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const item={id:c.doc.id,...c.doc.data()};
-      if(c.type==='added'||c.type==='modified'){
-        const i=USERS.findIndex(u=>u.id===item.id);
-        if(i>=0)USERS[i]=item; else USERS.push(item);
-      } else { USERS=USERS.filter(u=>u.id!==item.id); }
+  db.collection('users').onSnapshot(snap => {
+    snap.docChanges().forEach(c => {
+      const item = { id: c.doc.id, ...c.doc.data() };
+      if (c.type === 'added' || c.type === 'modified') {
+        const i = USERS.findIndex(u => u.id === item.id);
+        if (i >= 0) USERS[i] = item; else USERS.push(item);
+      } else { USERS = USERS.filter(u => u.id !== item.id); }
     });
   });
 }
 
-// ── SAVE VISITA ───────────────────────────────────────────
-window.saveVisit = async function(){
-  const filialIdx=parseInt(document.getElementById('filialSelect').value);
-  const date=document.getElementById('visitDate').value;
-  const resp=document.getElementById('visitResponsavel').value.trim();
-  const result=document.getElementById('visitResult').value;
-  const obs=document.getElementById('visitObs').value.trim();
-  const editId=document.getElementById('visitEditId').value;
-  if(!resp||!date){showToast('Preencha responsável e data.','warn');return;}
-  const filial=FILIAIS[filialIdx]||{};
-  const demandas=visitDemandasModal.map(d=>({
-    text:document.getElementById('dem-text-'+d.id)?.value.trim()||'',
-    status:document.getElementById('dem-status-'+d.id)?.value||'open',
-    depTipo:document.getElementById('dem-dep-tipo-'+d.id)?.value||null,
-    depValor:document.getElementById('dem-dep-valor-'+d.id)?.value.trim()||null,
-  })).filter(d=>d.text);
-  setSyncState('syncing','Salvando...');
+// ── Operações Firestore ───────────────────────────────────────
+async function saveVisit() {
+  const filialIdx = parseInt(document.getElementById('filialSelect').value);
+  const date      = document.getElementById('visitDate').value;
+  const resp      = document.getElementById('visitResponsavel').value.trim();
+  const result    = document.getElementById('visitResult').value;
+  const obs       = document.getElementById('visitObs').value.trim();
+  const editId    = document.getElementById('visitEditId').value;
+  if (!resp || !date) { showToast('Preencha responsável e data.', 'warn'); return; }
+  const filial = FILIAIS[filialIdx] || {};
+  const demandas = visitDemandasModal.map(d => ({
+    text:     document.getElementById('dem-text-'     + d.id)?.value.trim()  || '',
+    status:   document.getElementById('dem-status-'   + d.id)?.value         || 'open',
+    depTipo:  document.getElementById('dem-dep-tipo-' + d.id)?.value         || null,
+    depValor: document.getElementById('dem-dep-valor-'+ d.id)?.value.trim()  || null,
+  })).filter(d => d.text);
+  setSyncState('syncing', 'Salvando...');
   try {
-    const payload={
-      filialId:filial.id||'', filialCity:filial.city||'', filialState:filial.state||'',
-      date, responsavel:resp, result, temas:[...visitTags], demandas, obs,
-      autorUid:CURRENT_USER.uid, autorName:CURRENT_USER.name,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp(),
+    const payload = {
+      filialId: filial.id || '', filialCity: filial.city || '', filialState: filial.state || '',
+      date, responsavel: resp, result, temas: [...visitTags], demandas, obs,
+      autorUid: CURRENT_USER.uid, autorName: CURRENT_USER.name,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp(),
     };
     let savedId;
-    if(editId){
+    if (editId) {
       await db.collection('visitas').doc(editId).update(payload);
-      savedId=editId;
+      savedId = editId;
     } else {
-      payload.criadoEm=firebase.firestore.FieldValue.serverTimestamp();
-      const ref=await db.collection('visitas').add(payload);
-      savedId=ref.id;
+      payload.criadoEm = firebase.firestore.FieldValue.serverTimestamp();
+      const ref = await db.collection('visitas').add(payload);
+      savedId = ref.id;
     }
-    if(filial.id) await db.collection('filiais').doc(filial.id).update({
-      status:result, atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()
+    if (filial.id) await db.collection('filiais').doc(filial.id).update({
+      status: result, atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
     });
     closeVisitModal();
     await clearDraftFromStorage();
     await checkDraftBanner();
-    setSyncState('synced','Sincronizado');
+    setSyncState('synced', 'Sincronizado');
     showToast('✓ Relatório salvo com sucesso!');
-    activeRecordId=savedId;
-    fireNotifications({...payload,id:savedId,filialIdx});
-  } catch(e){setSyncState('error','Erro');showToast('Erro ao salvar: '+e.message,'err');}
-};
-
-// ── SAVE FILIAL ───────────────────────────────────────────
-async function addFilial(){
-  const city=document.getElementById('newCity').value.trim();
-  const state=document.getElementById('newState').value.trim().toUpperCase();
-  const coords=document.getElementById('newCoords').value.trim();
-  if(!city||!state){showToast('Preencha cidade e UF.','warn');return;}
-  let lat=-8.5,lng=-38.5;
-  if(coords){const p=coords.split(',');lat=parseFloat(p[0])||lat;lng=parseFloat(p[1])||lng;}
-  setSyncState('syncing','Salvando...');
-  try {
-    await db.collection('filiais').add({city,state,lat,lng,status:'ok',
-      criadoEm:firebase.firestore.FieldValue.serverTimestamp(),
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    document.getElementById('newCity').value='';
-    document.getElementById('newState').value='';
-    document.getElementById('newCoords').value='';
-    document.getElementById('addFilialForm').style.display='none';
-    setSyncState('synced','Sincronizado');
-    showToast('Filial adicionada!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    activeRecordId = savedId;
+    renderRecordsList();
+    fireNotifications({ ...payload, id: savedId, filialIdx });
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro ao salvar: ' + e.message, 'err'); }
 }
-async function saveEdit(){
-  const idx=parseInt(document.getElementById('editIdx').value);
-  const filial=FILIAIS[idx]; if(!filial)return;
-  setSyncState('syncing','Salvando...');
+
+async function addFilial() {
+  const city   = document.getElementById('newCity').value.trim();
+  const state  = document.getElementById('newState').value.trim().toUpperCase();
+  const coords = document.getElementById('newCoords').value.trim();
+  if (!city || !state) { showToast('Preencha cidade e UF.', 'warn'); return; }
+  let lat = -8.5, lng = -38.5;
+  if (coords) { const p = coords.split(','); lat = parseFloat(p[0]) || lat; lng = parseFloat(p[1]) || lng; }
+  setSyncState('syncing', 'Salvando...');
+  try {
+    await db.collection('filiais').add({ city, state, lat, lng, status:'ok',
+      criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() });
+    ['newCity','newState','newCoords'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('addFilialForm').style.display = 'none';
+    setSyncState('synced', 'Sincronizado'); showToast('Filial adicionada!');
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
+}
+async function saveEdit() {
+  const idx = parseInt(document.getElementById('editIdx').value);
+  const filial = FILIAIS[idx]; if (!filial) return;
+  setSyncState('syncing', 'Salvando...');
   try {
     await db.collection('filiais').doc(filial.id).update({
-      city:document.getElementById('editCity').value.trim(),
-      state:document.getElementById('editState').value.trim().toUpperCase(),
-      lat:parseFloat(document.getElementById('editLat').value),
-      lng:parseFloat(document.getElementById('editLng').value),
-      status:document.getElementById('editStatus').value,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()
+      city:   document.getElementById('editCity').value.trim(),
+      state:  document.getElementById('editState').value.trim().toUpperCase(),
+      lat:    parseFloat(document.getElementById('editLat').value),
+      lng:    parseFloat(document.getElementById('editLng').value),
+      status: document.getElementById('editStatus').value,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
     });
-    closeEditModal();setSyncState('synced','Sincronizado');showToast('Filial atualizada!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    closeEditModal(); setSyncState('synced', 'Sincronizado'); showToast('Filial atualizada!');
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-async function deleteFilialFromTable(idx){
-  const filial=FILIAIS[idx];
-  if(!filial||!confirm('Excluir a filial '+filial.city+'?'))return;
-  setSyncState('syncing','');
-  try {
-    await db.collection('filiais').doc(filial.id).delete();
-    setSyncState('synced','Sincronizado');showToast('Filial removida.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+async function deleteFilial(idx) {
+  const f = FILIAIS[idx];
+  if (!f || !confirm('Excluir a filial ' + f.city + '?')) return;
+  setSyncState('syncing', '');
+  try { await db.collection('filiais').doc(f.id).delete(); setSyncState('synced','Sincronizado'); showToast('Filial removida.'); }
+  catch(e) { setSyncState('error','Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-
-// ── SAVE USUÁRIO ──────────────────────────────────────────
-async function saveUser(){
-  const name=document.getElementById('userName').value.trim();
-  const email=document.getElementById('userEmail').value.trim();
-  const role=document.getElementById('userRole').value;
-  const active=document.getElementById('userActive').value==='true';
-  const phone=document.getElementById('userPhone')?.value.trim()||'';
-  const uf=document.getElementById('userUF')?.value||'';
-  const editId=document.getElementById('userId').value;
-  if(!name||!email){showToast('Preencha nome e e-mail.','warn');return;}
-  setSyncState('syncing','Salvando...');
+async function saveUser() {
+  const name   = document.getElementById('userName').value.trim();
+  const email  = document.getElementById('userEmail').value.trim();
+  const role   = document.getElementById('userRole').value;
+  const active = document.getElementById('userActive').value === 'true';
+  const phone  = document.getElementById('userPhone')?.value.trim() || '';
+  const uf     = document.getElementById('userUF')?.value || '';
+  const editId = document.getElementById('userId').value;
+  if (!name || !email) { showToast('Preencha nome e e-mail.', 'warn'); return; }
+  setSyncState('syncing', 'Salvando...');
   try {
-    if(editId){
-      await db.collection('users').doc(editId).update({name,email,role,active,phone,uf,
-        atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
+    if (editId) {
+      await db.collection('users').doc(editId).update({ name, email, role, active, phone, uf,
+        atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() });
       showToast('Usuário atualizado!');
     } else {
-      showToast('Para criar usuários: Firebase Console → Authentication → Add user. Anote o UID e crie o doc em users/{UID}.','warn');
-      closeUserModal();setSyncState('synced','');return;
+      showToast('Para criar usuários: Firebase Console → Authentication → Add user. Cole o UID em users/{UID}.', 'warn');
+      closeUserModal(); setSyncState('synced', ''); return;
     }
-    closeUserModal();setSyncState('synced','Sincronizado');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    closeUserModal(); setSyncState('synced', 'Sincronizado');
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-async function deleteUser(userId){
-  if(!confirm('Desativar este usuário?'))return;
-  setSyncState('syncing','');
-  try {
-    await db.collection('users').doc(userId).update({active:false,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    setSyncState('synced','Sincronizado');showToast('Usuário desativado.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+async function deleteUser(userId) {
+  if (!confirm('Desativar este usuário?')) return;
+  setSyncState('syncing', '');
+  try { await db.collection('users').doc(userId).update({ active:false, atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() }); setSyncState('synced','Sincronizado'); showToast('Usuário desativado.'); }
+  catch(e) { setSyncState('error','Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-
-// ── SAVE CONFIG ───────────────────────────────────────────
-async function saveConfig(){
-  CONFIG.ok.name=document.getElementById('conf-ok-name').value;
-  CONFIG.ok.color=document.getElementById('conf-ok-color').value;
-  CONFIG.visited.name=document.getElementById('conf-visited-name').value;
-  CONFIG.visited.color=document.getElementById('conf-visited-color').value;
-  CONFIG.visited.days=parseInt(document.getElementById('conf-visited-days').value)||30;
-  CONFIG.pending.name=document.getElementById('conf-pending-name').value;
-  CONFIG.pending.color=document.getElementById('conf-pending-color').value;
-  CONFIG.pending.days=parseInt(document.getElementById('conf-pending-days').value)||60;
-  setSyncState('syncing','');
+async function saveConfig() {
+  CONFIG.ok.name        = document.getElementById('conf-ok-name').value;
+  CONFIG.ok.color       = document.getElementById('conf-ok-color').value;
+  CONFIG.visited.name   = document.getElementById('conf-visited-name').value;
+  CONFIG.visited.color  = document.getElementById('conf-visited-color').value;
+  CONFIG.visited.days   = parseInt(document.getElementById('conf-visited-days').value) || 30;
+  CONFIG.pending.name   = document.getElementById('conf-pending-name').value;
+  CONFIG.pending.color  = document.getElementById('conf-pending-color').value;
+  CONFIG.pending.days   = parseInt(document.getElementById('conf-pending-days').value) || 60;
+  setSyncState('syncing', '');
   try {
-    await db.collection('config').doc('global').set({...CONFIG,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    refreshMarkers();updateLegend();
-    setSyncState('synced','Sincronizado');showToast('Configurações salvas!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    await db.collection('config').doc('global').set({
+      ok_name: CONFIG.ok.name, ok_color: CONFIG.ok.color,
+      visited_name: CONFIG.visited.name, visited_color: CONFIG.visited.color, visited_days: CONFIG.visited.days,
+      pending_name: CONFIG.pending.name, pending_color: CONFIG.pending.color, pending_days: CONFIG.pending.days,
+      display_legend: CONFIG.display.legend, display_filters: CONFIG.display.filters,
+      display_sidebar: CONFIG.display.sidebar, display_autozoom: CONFIG.display.autozoom,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    refreshMarkers(); updateLegend(); setSyncState('synced', 'Sincronizado'); showToast('Configurações salvas!');
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-
-// ── SAVE PROFILES ─────────────────────────────────────────
-async function saveProfiles(){
-  setSyncState('syncing','');
+function resetConfig() {
+  document.getElementById('conf-ok-name').value    = 'Regular';
+  document.getElementById('conf-ok-color').value   = '#00d4aa';
+  document.getElementById('conf-ok-hex').value     = '#00d4aa';
+  document.getElementById('conf-visited-name').value  = 'Visitada';
+  document.getElementById('conf-visited-color').value = '#0088ff';
+  document.getElementById('conf-visited-hex').value   = '#0088ff';
+  document.getElementById('conf-visited-days').value  = '30';
+  document.getElementById('conf-pending-name').value  = 'Pendente';
+  document.getElementById('conf-pending-color').value = '#ff6b35';
+  document.getElementById('conf-pending-hex').value   = '#ff6b35';
+  document.getElementById('conf-pending-days').value  = '60';
+  previewConfig();
+}
+async function saveProfiles() {
+  setSyncState('syncing', '');
   try {
-    const batch=db.batch();
-    for(const [role,perms] of Object.entries(PROFILES)){
-      if(role==='admin')continue;
-      batch.set(db.collection('profiles').doc(role),perms);
+    const batch = db.batch();
+    for (const [role, perms] of Object.entries(PROFILES)) {
+      if (role === 'admin') continue;
+      batch.set(db.collection('profiles').doc(role), perms);
     }
-    await batch.commit();
-    setSyncState('synced','Sincronizado');showToast('Permissões salvas!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    await batch.commit(); setSyncState('synced', 'Sincronizado'); showToast('Permissões salvas!');
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-
-// ── DELETE VISITA ─────────────────────────────────────────
-async function deleteVisit(id){
-  if(!confirm('Excluir este registro de visita?'))return;
-  setSyncState('syncing','');
+async function deleteVisit(id) {
+  if (!confirm('Excluir este registro?')) return;
+  setSyncState('syncing', '');
+  try { await db.collection('visitas').doc(id).delete(); setSyncState('synced','Sincronizado'); showToast('Registro excluído.'); }
+  catch(e) { setSyncState('error','Erro'); showToast('Erro: ' + e.message, 'err'); }
+}
+async function saveNotifConfig() {
+  const g = id => document.getElementById(id);
+  if (g('notifGlobalEnabled')) NOTIF_CONFIG.globalEnabled = g('notifGlobalEnabled').checked;
+  if (g('waEnabled'))    NOTIF_CONFIG.wa.enabled    = g('waEnabled').checked;
+  if (g('waWebhookUrl')) NOTIF_CONFIG.wa.webhookUrl = g('waWebhookUrl').value.trim();
+  if (g('waToken'))      NOTIF_CONFIG.wa.token      = g('waToken').value.trim();
+  if (g('waTarget'))     NOTIF_CONFIG.wa.target     = g('waTarget').value.trim();
+  if (g('tgEnabled'))    NOTIF_CONFIG.tg.enabled    = g('tgEnabled').checked;
+  if (g('tgBotToken'))   NOTIF_CONFIG.tg.botToken   = g('tgBotToken').value.trim();
+  if (g('tgChatId'))     NOTIF_CONFIG.tg.chatId     = g('tgChatId').value.trim();
+  if (g('tgWebhookUrl')) NOTIF_CONFIG.tg.webhookUrl = g('tgWebhookUrl').value.trim();
+  if (g('notifMsgTemplate')) NOTIF_CONFIG.msgTemplate = g('notifMsgTemplate').value;
   try {
-    await db.collection('visitas').doc(id).delete();
-    setSyncState('synced','Sincronizado');showToast('Registro excluído.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    await db.collection('notif_config').doc('global').set({
+      globalEnabled: NOTIF_CONFIG.globalEnabled, recipients: NOTIF_CONFIG.recipients,
+      wa_enabled: NOTIF_CONFIG.wa.enabled, wa_webhookUrl: NOTIF_CONFIG.wa.webhookUrl,
+      wa_token: NOTIF_CONFIG.wa.token, wa_target: NOTIF_CONFIG.wa.target,
+      tg_enabled: NOTIF_CONFIG.tg.enabled, tg_botToken: NOTIF_CONFIG.tg.botToken,
+      tg_chatId: NOTIF_CONFIG.tg.chatId, tg_webhookUrl: NOTIF_CONFIG.tg.webhookUrl,
+      msgTemplate: NOTIF_CONFIG.msgTemplate,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } catch(e) {}
 }
 
-// ── SAVE NOTIF CONFIG ─────────────────────────────────────
-async function saveNotifConfig(){
-  const el=id=>document.getElementById(id);
-  if(el('notifGlobalEnabled'))NOTIF_CONFIG.globalEnabled=el('notifGlobalEnabled').checked;
-  if(el('waEnabled'))NOTIF_CONFIG.wa.enabled=el('waEnabled').checked;
-  if(el('waWebhookUrl'))NOTIF_CONFIG.wa.webhookUrl=el('waWebhookUrl').value.trim();
-  if(el('waToken'))NOTIF_CONFIG.wa.token=el('waToken').value.trim();
-  if(el('waTarget'))NOTIF_CONFIG.wa.target=el('waTarget').value.trim();
-  if(el('tgEnabled'))NOTIF_CONFIG.tg.enabled=el('tgEnabled').checked;
-  if(el('tgBotToken'))NOTIF_CONFIG.tg.botToken=el('tgBotToken').value.trim();
-  if(el('tgChatId'))NOTIF_CONFIG.tg.chatId=el('tgChatId').value.trim();
-  if(el('tgWebhookUrl'))NOTIF_CONFIG.tg.webhookUrl=el('tgWebhookUrl').value.trim();
-  if(el('notifMsgTemplate'))NOTIF_CONFIG.msgTemplate=el('notifMsgTemplate').value;
-  try {
-    await db.collection('notif_config').doc('global').set({...NOTIF_CONFIG,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-  } catch(e){}
+// ── Rascunhos no Firestore ────────────────────────────────────
+function getDraftKey()  { return CURRENT_USER?.uid || 'anon'; }
+async function saveDraftToStorage(data) {
+  try { await db.collection('rascunhos').doc(getDraftKey()).set({ ...data, savedAt: firebase.firestore.FieldValue.serverTimestamp() }); } catch(e) {}
 }
-
-// ── RASCUNHOS → FIRESTORE ─────────────────────────────────
-function getDraftKey(){return CURRENT_USER?.uid||'anon';}
-async function saveDraftToStorage(data){
-  try{await db.collection('rascunhos').doc(getDraftKey()).set({...data,
-    savedAt:firebase.firestore.FieldValue.serverTimestamp()});}catch(e){}
-}
-async function loadDraftFromStorage(){
-  try{const s=await db.collection('rascunhos').doc(getDraftKey()).get();
-    if(s.exists)return s.data();}catch(e){}
+async function loadDraftFromStorage() {
+  try { const s = await db.collection('rascunhos').doc(getDraftKey()).get(); if (s.exists) return s.data(); } catch(e) {}
   return null;
 }
-async function clearDraftFromStorage(){
-  try{await db.collection('rascunhos').doc(getDraftKey()).delete();}catch(e){}
+async function clearDraftFromStorage() {
+  try { await db.collection('rascunhos').doc(getDraftKey()).delete(); } catch(e) {}
 }
 
-// ── PERMISSÃO IA ──────────────────────────────────────────
-function canUseAI(){
-  const role=CURRENT_USER?.role;
-  return role&&PROFILES[role]?.ai_summary===true;
+// ── Permissão IA ──────────────────────────────────────────────
+function canUseAI() {
+  return !!(CURRENT_USER?.role && PROFILES[CURRENT_USER.role]?.ai_summary === true);
 }
 
-// ── MAP INIT ──────────────────────────────────────────────
-function initMap(){
-  if(map)return;
-  map=L.map('map',{center:[-8.5,-38.5],zoom:6,zoomControl:false,attributionControl:false});
+// ── Mapa (inicializado após login) ────────────────────────────
+function initMap() {
+  if (map) return;
+  map = L.map('map', { center:[-8.5,-38.5], zoom:6, zoomControl:false, attributionControl:false });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-  L.control.zoom({position:'bottomleft'}).addTo(map);
+  L.control.zoom({ position:'bottomleft' }).addTo(map);
   applyBrazilMask();
+}
+
+// ── Navegação ─────────────────────────────────────────────────
+function showView(view) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active', 'active-settings'));
+  document.getElementById('view-' + view).classList.add('active');
+  const tab = document.getElementById('tab-' + view);
+  if (tab) tab.classList.add(view === 'settings' ? 'active-settings' : 'active');
+  if (view === 'map')      setTimeout(() => map && map.invalidateSize(), 50);
+  if (view === 'settings') renderFilialTable();
+  if (view === 'records')  renderRecordsList();
+}
+function showPanel(panel, btn) {
+  document.querySelectorAll('.settings-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.settings-nav-item').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + panel).classList.add('active');
+  btn.classList.add('active');
+  if (panel === 'users')    renderUsersGrid();
+  if (panel === 'profiles') renderProfilesGrid();
+  if (panel === 'filiais')  renderFilialTable();
+  if (panel === 'notif')    applyNotifConfigToUI();
 }
 
 const STATE_BOUNDS = {
@@ -1693,12 +1815,8 @@ const PERM_GROUPS = [
   ]},
 ];
 
-const DEPARTAMENTOS = [
-  'Comercial','Financeiro','Logística','RH','TI','Jurídico',
-  'Marketing','Operações','Qualidade','Diretoria','Suporte'
-];
-
-// ═══ UI FUNCTIONS ═══════════════════════════════════════════════
+const DEPARTAMENTOS=['Comercial','Financeiro','Logística','RH','TI','Jurídico','Marketing','Operações','Qualidade','Diretoria','Suporte'];
+// ═══ UI FUNCTIONS ═══════════════════════════════════════════
 function applyBrazilMask() {
   const mapEl=document.getElementById('map');
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
@@ -1855,14 +1973,6 @@ function buildUfChips(){
 function openVisitModal(){document.getElementById('visitModalOverlay').classList.add('open');document.getElementById('visitDate').value=new Date().toISOString().split('T')[0];}
 function openVisitModalForFilial(idx){openVisitModal();document.getElementById('filialSelect').value=idx;}
 function closeVisitModal(){document.getElementById('visitModalOverlay').classList.remove('open');}
-function saveVisit(){
-  const idx=parseInt(document.getElementById('filialSelect').value);
-  const result=document.getElementById('visitResult').value;
-  if(!isNaN(idx)){FILIAIS[idx].status=result;markers[idx]?.setIcon(createMarkerIcon(result,idx===activeFilialIndex,isMarkerDimmed(FILIAIS[idx])));markers[idx]?.setPopupContent(buildPopup(FILIAIS[idx],idx));renderList();updateStats();}
-  closeVisitModal();
-}
-
-// ═══ SETTINGS: FILIAIS ═══════════════════════════════════════
 function renderFilialTable(){
   const tbody=document.getElementById('filiaisTableBody'); tbody.innerHTML='';
   FILIAIS.forEach((f,i)=>{
@@ -2543,43 +2653,6 @@ Seja direto, objetivo e use linguagem executiva. Máximo 180 palavras.`;
   }
 }
 
-// ── SALVAR VISITA (expandido) ─────────────────────────────
-function saveVisit() {
-  const filialIdx = parseInt(document.getElementById('filialSelect').value);
-  const date      = document.getElementById('visitDate').value;
-  const resp      = document.getElementById('visitResponsavel').value.trim();
-  const result    = document.getElementById('visitResult').value;
-  const obs       = document.getElementById('visitObs').value.trim();
-  const editId    = document.getElementById('visitEditId').value;
-
-  if (!resp || !date) { alert('Preencha responsável e data.'); return; }
-
-  const demandas = visitDemandasModal.map(d => ({
-    text: document.getElementById('dem-text-'+d.id)?.value.trim() || '',
-    status: document.getElementById('dem-status-'+d.id)?.value || 'open',
-    depTipo: document.getElementById('dem-dep-tipo-'+d.id)?.value || null,
-    depValor: document.getElementById('dem-dep-valor-'+d.id)?.value.trim() || null,
-  })).filter(d => d.text);
-
-  if (editId) {
-    const v = VISITS.find(x=>x.id===editId);
-    if (v) { v.filialIdx=filialIdx; v.date=date; v.responsavel=resp; v.result=result; v.temas=[...visitTags]; v.demandas=demandas; v.obs=obs; }
-  } else {
-    VISITS.push({ id:'v'+String(nextVisitId++).padStart(3,'0'), filialIdx, date, responsavel:resp, result, temas:[...visitTags], demandas, obs });
-  }
-
-  // atualiza status da filial
-  if (!isNaN(filialIdx)) {
-    FILIAIS[filialIdx].status = result;
-    markers[filialIdx]?.setIcon(createMarkerIcon(result, filialIdx===activeFilialIndex, isMarkerDimmed(FILIAIS[filialIdx])));
-    markers[filialIdx]?.setPopupContent(buildPopup(FILIAIS[filialIdx], filialIdx));
-  }
-  renderList(); updateStats();
-  closeVisitModal();
-  renderRecordsList();
-  if (activeRecordId) showRecordDetail(activeRecordId);
-}
-
 // ── MODAL DE VISITA: abrir/fechar/editar ─────────────────
 function openVisitModal() {
   visitTags = [];
@@ -2726,7 +2799,7 @@ window.showView = function(view) {
 
 
 
-// ═══ NOTIFICAÇÕES (payload + dispatch) ══════════════════════════
+// ═══ NOTIFICAÇÕES ═══════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════
 // NOTIFICAÇÕES — CONFIG (persistente via window.storage)
 // ═══════════════════════════════════════════════════════════
@@ -2942,81 +3015,7 @@ async function fireNotifications(visit) {
 }
 
 
-// ═══ showView / showPanel ═══════════════════════════════════
-window.showView = function(view){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active','active-settings'));
-  document.getElementById('view-'+view).classList.add('active');
-  const tab=document.getElementById('tab-'+view);
-  if(tab)tab.classList.add(view==='settings'?'active-settings':'active');
-  if(view==='map')setTimeout(()=>map&&map.invalidateSize(),50);
-  if(view==='settings')renderFilialTable();
-  if(view==='records')renderRecordsList();
-};
-const _origShowPanel=showPanel;
-window.showPanel=function(panel,btn){
-  _origShowPanel(panel,btn);
-  if(panel==='notif')applyNotifConfigToUI();
-};
-
-// ── RASCUNHOS UI ──────────────────────────────────────────
-// ═══════════════════════════════════════════════════════════
-// RASCUNHOS — persistência por usuário via window.storage
-// ═══════════════════════════════════════════════════════════
-function getDraftKey() {
-  return `draft_visit_user${CURRENT_USER.id}`;
-}
-
-async function saveDraftToStorage(data) {
-  try { await window.storage.set(getDraftKey(), JSON.stringify(data)); } catch(e) {}
-}
-
-async function loadDraftFromStorage() {
-  try {
-    const r = await window.storage.get(getDraftKey());
-    return r?.value ? JSON.parse(r.value) : null;
-  } catch(e) { return null; }
-}
-
-async function clearDraftFromStorage() {
-  try { await window.storage.delete(getDraftKey()); } catch(e) {}
-}
-
-// ── CAPTURA DO ESTADO ATUAL DO MODAL ─────────────────────
-function captureModalState() {
-  const demandasSnap = visitDemandasModal.map(d => ({
-    id: d.id,
-    text:     document.getElementById('dem-text-'+d.id)?.value || '',
-    status:   document.getElementById('dem-status-'+d.id)?.value || 'open',
-    depTipo:  document.getElementById('dem-dep-tipo-'+d.id)?.value || null,
-    depValor: document.getElementById('dem-dep-valor-'+d.id)?.value || null,
-  }));
-  return {
-    filialIdx:   parseInt(document.getElementById('filialSelect')?.value) || 0,
-    date:        document.getElementById('visitDate')?.value || '',
-    responsavel: document.getElementById('visitResponsavel')?.value || '',
-    result:      document.getElementById('visitResult')?.value || 'visited',
-    obs:         document.getElementById('visitObs')?.value || '',
-    temas:       [...visitTags],
-    demandas:    demandasSnap,
-    editId:      document.getElementById('visitEditId')?.value || '',
-    savedAt:     new Date().toISOString(),
-  };
-}
-
-// ── SALVAR RASCUNHO ───────────────────────────────────────
-async function saveAsDraft() {
-  const state = captureModalState();
-  if (!state.responsavel && !state.obs && state.temas.length===0 && state.demandas.length===0) {
-    showToast('Preencha pelo menos um campo antes de salvar como rascunho.', 'warn');
-    return;
-  }
-  await saveDraftToStorage(state);
-  closeVisitModal();
-  await checkDraftBanner();
-  showToast('📝 Rascunho salvo com sucesso!', 'ok');
-}
-
+// ═══ RASCUNHO UI ════════════════════════════════════════════
 // ── VERIFICAR E EXIBIR BANNER DE RASCUNHO ────────────────
 async function checkDraftBanner() {
   const draft = await loadDraftFromStorage();
@@ -3076,6 +3075,8 @@ async function discardDraft() {
 // ── AUTO-SAVE RASCUNHO (ao fechar modal sem salvar) ───────
 // Substituída pela ação explícita do botão "Salvar rascunho"
 
+
+// ═══ TOAST ══════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════
 // TOAST GENÉRICO
 // ═══════════════════════════════════════════════════════════
@@ -3102,34 +3103,8 @@ function showToast(msg, type='ok') {
   }, 3000);
 }
 
-
-// ── TOAST ─────────────────────────────────────────────────
-// ═══════════════════════════════════════════════════════════
-// TOAST GENÉRICO
-// ═══════════════════════════════════════════════════════════
-function showToast(msg, type='ok') {
-  const colors = {
-    ok:   { bg:'#111827', border:'#00d4aa', color:'#00d4aa' },
-    warn: { bg:'#111827', border:'#f59e0b', color:'#f59e0b' },
-    err:  { bg:'#111827', border:'#ef4444', color:'#ef4444' },
-    muted:{ bg:'#111827', border:'#263554', color:'#6b7a99' },
-  };
-  const c = colors[type] || colors.ok;
-  const el = document.createElement('div');
-  el.style.cssText = `position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(8px);
-    background:${c.bg};border:1px solid ${c.border};color:${c.color};
-    padding:11px 22px;border-radius:10px;font-size:13px;font-weight:500;
-    z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,0.5);
-    transition:opacity 0.25s,transform 0.25s;opacity:0;pointer-events:none;white-space:nowrap;`;
-  el.textContent = msg;
-  document.body.appendChild(el);
-  requestAnimationFrame(() => { el.style.opacity='1'; el.style.transform='translateX(-50%) translateY(0)'; });
-  setTimeout(() => {
-    el.style.opacity='0'; el.style.transform='translateX(-50%) translateY(8px)';
-    setTimeout(()=>el.remove(), 300);
-  }, 3000);
-}
 
 
 </script>
+</body>
 </html>
