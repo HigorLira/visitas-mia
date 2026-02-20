@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VisitaFiliais · Sistema de Gestão</title>
+<title>VisitaFiliais</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -495,45 +495,42 @@ code.notif-var {
 code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
 
 
-/* ── LOGIN ──────────────────────────────────────────────── */
 #login-screen{position:fixed;inset:0;background:var(--bg);display:flex;align-items:center;justify-content:center;z-index:9000;}
 #login-screen.hidden{display:none;}
-.login-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:40px 44px;width:380px;display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 80px rgba(0,0,0,0.5);}
+.login-card{background:var(--panel);border:1px solid var(--border);border-radius:20px;padding:44px;width:380px;display:flex;flex-direction:column;gap:20px;box-shadow:0 24px 80px rgba(0,0,0,0.55);}
 .login-logo{display:flex;align-items:center;gap:12px;margin-bottom:4px;}
-.login-logo-mark{width:42px;height:42px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;}
+.login-logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
 .login-title{font-family:'Fraunces',serif;font-size:22px;font-weight:600;letter-spacing:-0.5px;}
 .login-sub{font-size:13px;color:var(--muted);margin-top:2px;}
 .login-field{display:flex;flex-direction:column;gap:7px;}
 .login-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);}
-.login-input{padding:10px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
+.login-input{padding:11px 14px;background:var(--panel2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:'Inter',sans-serif;font-size:14px;outline:none;transition:border-color 0.2s;}
 .login-input:focus{border-color:var(--accent);}
 .login-input::placeholder{color:var(--muted);}
-.login-btn{width:100%;padding:12px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:600;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;transition:opacity 0.2s;margin-top:4px;}
+.login-btn{width:100%;padding:13px;border-radius:10px;border:none;cursor:pointer;font-family:'Inter',sans-serif;font-size:14px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;transition:opacity 0.2s;margin-top:4px;}
 .login-btn:hover{opacity:0.88;}
-.login-btn:disabled{opacity:0.5;cursor:not-allowed;}
-.login-err{font-size:12px;color:var(--danger);text-align:center;padding:8px 12px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;display:none;}
+.login-btn:disabled{opacity:0.45;cursor:not-allowed;}
+.login-err{font-size:12px;color:var(--danger);text-align:center;padding:9px 14px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;display:none;}
 .login-err.visible{display:block;}
-/* ── LOADING ─────────────────────────────────────────────── */
 #app-loading{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:8000;gap:16px;}
 #app-loading.hidden{display:none;}
 .loading-spinner{width:40px;height:40px;border-radius:50%;border:3px solid var(--border2);border-top-color:var(--accent);animation:spin 0.8s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg);}}
 .loading-text{font-size:13px;color:var(--muted);}
-/* ── USER BADGE ──────────────────────────────────────────── */
 .header-user{display:flex;align-items:center;gap:10px;padding:5px 5px 5px 12px;background:var(--panel2);border:1px solid var(--border);border-radius:30px;cursor:pointer;transition:border-color 0.2s;}
 .header-user:hover{border-color:var(--accent);}
 .header-user-name{font-size:12px;font-weight:500;}
 .header-user-role{font-size:10px;color:var(--muted);}
 .header-user-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:12px;font-weight:600;color:#fff;}
-/* ── SYNC DOT ────────────────────────────────────────────── */
 .sync-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--muted);transition:background 0.4s;}
 .sync-dot.syncing{background:#f59e0b;animation:pulse 1s infinite;}
 .sync-dot.synced{background:var(--accent);}
 .sync-dot.error{background:var(--danger);}
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+
 </style>
 </head>
-
+<body>
 <div id="login-screen">
   <div class="login-card">
     <div class="login-logo">
@@ -552,13 +549,11 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     <button class="login-btn" id="loginBtn" onclick="doLogin()">Entrar</button>
   </div>
 </div>
-<div id="app-loading">
+<div id="app-loading" class="hidden">
   <div class="loading-spinner"></div>
   <div class="loading-text" id="loadingText">Carregando sistema...</div>
 </div>
-<body style="display:none;" id="app-body">
-
-
+<div id="app-body" style="display:none;flex:1;flex-direction:column;height:100vh;overflow:hidden;">
 <header>
   <div class="logo">
     <div class="logo-mark">📍</div>
@@ -575,11 +570,11 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     <div class="stat"><div class="stat-num" id="pendingCount">0</div><div class="stat-label">Pendentes</div></div>
   </div>
   <div class="header-actions" style="display:flex;align-items:center;gap:10px;">
-        <div style="display:flex;align-items:center;gap:6px;cursor:default;" title="Status de sincronização">
+        <div style="display:flex;align-items:center;gap:6px;">
           <div class="sync-dot" id="syncDot"></div>
           <span id="syncLabel" style="font-size:10px;color:var(--muted);"></span>
         </div>
-        <div class="header-user" onclick="doLogout()" title="Clique para sair">
+        <div class="header-user" onclick="doLogout()" title="Sair">
           <div style="text-align:right;">
             <div class="header-user-name" id="headerUserName">—</div>
             <div class="header-user-role" id="headerUserRole">—</div>
@@ -1206,18 +1201,16 @@ code.notif-var:hover { background:var(--panel3); border-color:var(--accent); }
     </div>
   </div>
 </div>
-
-
-</body>
-
+</div>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
+
 // ╔══════════════════════════════════════════════════════════╗
-// ║   !! SUBSTITUA PELAS CREDENCIAIS DO SEU PROJETO !!       ║
-// ║   Firebase Console → Configurações → Seus apps → SDK     ║
+// ║  SUBSTITUA PELOS DADOS DO SEU PROJETO FIREBASE           ║
+// ║  Console → ⚙ Configurações → Seus apps → </>            ║
 // ╚══════════════════════════════════════════════════════════╝
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCxPFx-VRppt9YA_Gssg9eLCEuWoSPhuGo",
@@ -1227,15 +1220,23 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "745373188746",
   appId:             "1:745373188746:web:954bf576c821b90b266373"
 };
-firebase.initializeApp(FIREBASE_CONFIG);
-const auth = firebase.auth();
-const db   = firebase.firestore();
-db.enablePersistence({ synchronizeTabs:true }).catch(()=>{});
 
-// ── ESTADO GLOBAL ─────────────────────────────────────────
+// ── Firebase init (protegido) ─────────────────────────────────
+let auth, db;
+try {
+  firebase.initializeApp(FIREBASE_CONFIG);
+  auth = firebase.auth();
+  db   = firebase.firestore();
+  db.enablePersistence({ synchronizeTabs: true }).catch(() => {});
+} catch(e) {
+  console.error('Firebase init error:', e);
+  const errEl = document.getElementById('loginErr');
+  if (errEl) { errEl.textContent = 'Erro de config Firebase: ' + e.message; errEl.classList.add('visible'); }
+}
+
+// ── Estado global ─────────────────────────────────────────────
 let FILIAIS  = [];
-let APP_USERS    = [];
-let VISITS   = [];
+let USERS    = [];
 let PROFILES = {};
 let CONFIG   = {
   ok:      { name:'Regular',  color:'#00d4aa', days:null },
@@ -1249,94 +1250,119 @@ let NOTIF_CONFIG = {
   tg:{ enabled:false, botToken:'', chatId:'', webhookUrl:'' },
   msgTemplate:''
 };
-let CURRENT_USER   = null;
-let activeRecordId = null;
-let visitTags      = [];
-let visitDemandasModal = [];
-let activeFilter   = 'all', activeFilialIndex = null, markers = [];
-let mapStatusFilter = 'all', mapUfFilter = null;
-let map;
 
-// ── SYNC INDICATOR ────────────────────────────────────────
-function setSyncState(state, label=''){
-  const dot=document.getElementById('syncDot');
-  const lbl=document.getElementById('syncLabel');
-  if(!dot)return;
-  dot.className='sync-dot '+state;
-  if(lbl)lbl.textContent=label;
+const DEPARTAMENTOS = [
+  'Comercial','Financeiro','Logística','RH','TI','Jurídico',
+  'Marketing','Operações','Qualidade','Diretoria','Suporte'
+];
+
+let CURRENT_USER      = null;
+let activeRecordId    = null;
+let visitTags         = [];
+let visitDemandasModal= [];
+let activeFilter      = 'all';
+let activeFilialIndex = null;
+let markers           = [];
+let mapStatusFilter   = 'all';
+let mapUfFilter       = null;
+let map;
+let demandaIdCounter  = 0;
+let nextUserId        = 1;
+
+// ── Sync indicator ────────────────────────────────────────────
+function setSyncState(state, label) {
+  label = label || '';
+  const dot = document.getElementById('syncDot');
+  const lbl = document.getElementById('syncLabel');
+  if (dot) dot.className = 'sync-dot ' + state;
+  if (lbl) lbl.textContent = label;
 }
 
-// ── LOGIN / LOGOUT ────────────────────────────────────────
-async function doLogin(){
-  const email=document.getElementById('loginEmail').value.trim();
-  const pass=document.getElementById('loginPass').value;
-  const btn=document.getElementById('loginBtn');
-  const err=document.getElementById('loginErr');
+// ── Login / Logout ────────────────────────────────────────────
+async function doLogin() {
+  if (!auth) {
+    const e = document.getElementById('loginErr');
+    e.textContent = 'Firebase não inicializado. Verifique as credenciais.';
+    e.classList.add('visible');
+    return;
+  }
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass  = document.getElementById('loginPass').value;
+  const btn   = document.getElementById('loginBtn');
+  const err   = document.getElementById('loginErr');
   err.classList.remove('visible');
-  btn.disabled=true; btn.textContent='Entrando...';
+  btn.disabled = true;
+  btn.textContent = 'Entrando...';
   try {
-    await auth.signInWithEmailAndPassword(email,pass);
-  } catch(e){
-    const msgs={'auth/user-not-found':'Usuário não encontrado.','auth/wrong-password':'Senha incorreta.',
-      'auth/invalid-email':'E-mail inválido.','auth/too-many-requests':'Muitas tentativas. Tente mais tarde.',
-      'auth/invalid-credential':'E-mail ou senha incorretos.'};
-    err.textContent=msgs[e.code]||('Erro: '+e.message);
+    await auth.signInWithEmailAndPassword(email, pass);
+  } catch(e) {
+    const msgs = {
+      'auth/user-not-found':     'Usuário não encontrado.',
+      'auth/wrong-password':     'Senha incorreta.',
+      'auth/invalid-email':      'E-mail inválido.',
+      'auth/too-many-requests':  'Muitas tentativas. Tente mais tarde.',
+      'auth/invalid-credential': 'E-mail ou senha incorretos.',
+    };
+    err.textContent = msgs[e.code] || ('Erro: ' + e.message);
     err.classList.add('visible');
-    btn.disabled=false; btn.textContent='Entrar';
+    btn.disabled = false;
+    btn.textContent = 'Entrar';
   }
 }
-window.doLogin = doLogin;
 
-async function doLogout(){
-  if(!confirm('Sair do sistema?'))return;
-  await auth.signOut();
+async function doLogout() {
+  if (!confirm('Sair do sistema?')) return;
+  if (auth) await auth.signOut();
 }
 
-// ── AUTH STATE ────────────────────────────────────────────
-auth.onAuthStateChanged(async(fbUser)=>{
-  if(!fbUser){ showLoginScreen(); return; }
-  try {
-    const snap=await db.collection('users').doc(fbUser.uid).get();
-    if(!snap.exists||snap.data().active===false){
-      showLoginScreen('Conta inativa. Contacte o administrador.');
-      await auth.signOut(); return;
+// ── Auth observer ─────────────────────────────────────────────
+if (auth) {
+  auth.onAuthStateChanged(async function(fbUser) {
+    if (!fbUser) {
+      document.getElementById('app-loading').classList.add('hidden');
+      document.getElementById('app-body').style.display = 'none';
+      document.getElementById('login-screen').classList.remove('hidden');
+      var btn = document.getElementById('loginBtn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Entrar'; }
+      return;
     }
-    CURRENT_USER={ uid:fbUser.uid, ...snap.data() };
-    updateHeaderUser();
-    await bootApp();
-  } catch(e){ showLoginScreen('Erro ao carregar perfil: '+e.message); }
-});
-
-function showLoginScreen(msg){
-  document.getElementById('app-loading').classList.add('hidden');
-  document.getElementById('app-body').style.display='none';
-  document.getElementById('login-screen').classList.remove('hidden');
-  const btn=document.getElementById('loginBtn');
-  if(btn){btn.disabled=false;btn.textContent='Entrar';}
-  if(msg){const el=document.getElementById('loginErr');el.textContent=msg;el.classList.add('visible');}
+    document.getElementById('login-screen').classList.add('hidden');
+    document.getElementById('app-loading').classList.remove('hidden');
+    try {
+      var snap = await db.collection('users').doc(fbUser.uid).get();
+      if (!snap.exists || snap.data().active === false) {
+        await auth.signOut();
+        return;
+      }
+      CURRENT_USER = { uid: fbUser.uid };
+      var data = snap.data();
+      Object.keys(data).forEach(function(k) { CURRENT_USER[k] = data[k]; });
+      await bootApp();
+    } catch(e) {
+      document.getElementById('app-loading').classList.add('hidden');
+      document.getElementById('login-screen').classList.remove('hidden');
+      var err = document.getElementById('loginErr');
+      err.textContent = 'Erro ao carregar perfil: ' + e.message;
+      err.classList.add('visible');
+      var btn = document.getElementById('loginBtn');
+      if (btn) { btn.disabled = false; btn.textContent = 'Entrar'; }
+    }
+  });
 }
 
-function updateHeaderUser(){
-  if(!CURRENT_USER)return;
-  document.getElementById('headerUserName').textContent=CURRENT_USER.name||CURRENT_USER.email;
-  const meta=ROLE_META[CURRENT_USER.role]||{};
-  document.getElementById('headerUserRole').textContent=(meta.icon||'')+' '+(meta.label||CURRENT_USER.role);
-  const av=document.getElementById('headerUserAvatar');
-  av.textContent=getInitials(CURRENT_USER.name||CURRENT_USER.email);
-  av.style.background=meta.bg||'#6b7a99';
-}
-
-// ── BOOT ─────────────────────────────────────────────────
-async function bootApp(){
-  document.getElementById('login-screen').classList.add('hidden');
-  document.getElementById('app-loading').classList.remove('hidden');
-  document.getElementById('app-body').style.display='';
-  setSyncState('syncing','Carregando...');
+// ── Boot ──────────────────────────────────────────────────────
+async function bootApp() {
+  document.getElementById('loadingText').textContent = 'Carregando dados...';
+  setSyncState('syncing', 'Carregando...');
   try {
-    await Promise.all([loadFiliais(),loadUsers(),loadProfiles(),loadConfig(),loadVisitas()]);
+    await Promise.all([
+      loadFiliais(), loadUsers(), loadProfiles(), loadConfig(), loadVisitas()
+    ]);
     setupRealtimeListeners();
     document.getElementById('app-loading').classList.add('hidden');
-    setSyncState('synced','Sincronizado');
+    document.getElementById('app-body').style.display = 'flex';
+    setSyncState('synced', 'Sincronizado');
+    updateHeaderUser();
     initMap();
     rebuildMarkers();
     buildUfChips();
@@ -1344,314 +1370,369 @@ async function bootApp(){
     updateStats();
     await loadNotifConfig();
     await checkDraftBanner();
-  } catch(e){
-    setSyncState('error','Erro');
-    document.getElementById('app-loading').innerHTML=
-      '<div style="color:var(--danger);text-align:center;padding:32px;">Erro ao carregar: '+e.message+
-      '<br><br><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;border-radius:8px;border:1px solid var(--danger);background:transparent;color:var(--danger);cursor:pointer;font-family:Inter,sans-serif;">Recarregar</button></div>';
+  } catch(e) {
+    setSyncState('error', 'Erro');
+    document.getElementById('loadingText').innerHTML =
+      'Erro ao carregar: ' + e.message +
+      '<br><br><button onclick="location.reload()" style="margin-top:12px;padding:8px 20px;' +
+      'border-radius:8px;border:1px solid var(--danger);background:transparent;' +
+      'color:var(--danger);cursor:pointer;font-size:13px;">Recarregar</button>';
+    console.error('Boot error:', e);
   }
 }
 
-// ── LOADERS ──────────────────────────────────────────────
-async function loadFiliais(){
-  const snap=await db.collection('filiais').orderBy('state').orderBy('city').get();
-  FILIAIS=snap.docs.map(d=>({id:d.id,...d.data()}));
+function updateHeaderUser() {
+  if (!CURRENT_USER) return;
+  var el = document.getElementById('headerUserName');
+  if (el) el.textContent = CURRENT_USER.name || CURRENT_USER.email || '';
+  var meta = (ROLE_META && ROLE_META[CURRENT_USER.role]) || {};
+  var roleEl = document.getElementById('headerUserRole');
+  if (roleEl) roleEl.textContent = (meta.icon || '') + ' ' + (meta.label || CURRENT_USER.role || '');
+  var av = document.getElementById('headerUserAvatar');
+  if (av) {
+    av.textContent = getInitials(CURRENT_USER.name || CURRENT_USER.email || '?');
+    av.style.background = meta.bg || '#6b7a99';
+  }
 }
-async function loadUsers(){
-  const snap=await db.collection('users').get();
-  APP_USERS=snap.docs.map(d=>({id:d.id,...d.data()}));
+
+// ── Loaders ───────────────────────────────────────────────────
+async function loadFiliais() {
+  var snap = await db.collection('filiais').orderBy('state').orderBy('city').get();
+  FILIAIS = snap.docs.map(function(d) { return Object.assign({ id: d.id }, d.data()); });
 }
-async function loadProfiles(){
-  const snap=await db.collection('profiles').get();
-  PROFILES={};
-  snap.docs.forEach(d=>{PROFILES[d.id]=d.data();});
+async function loadUsers() {
+  var snap = await db.collection('users').get();
+  USERS = snap.docs.map(function(d) { return Object.assign({ id: d.id }, d.data()); });
 }
-async function loadConfig(){
-  const snap=await db.collection('config').doc('global').get();
-  if(snap.exists) CONFIG={...CONFIG,...snap.data()};
+async function loadProfiles() {
+  var snap = await db.collection('profiles').get();
+  PROFILES = {};
+  snap.docs.forEach(function(d) { PROFILES[d.id] = d.data(); });
 }
-async function loadVisitas(){
-  let q=db.collection('visitas').orderBy('criadoEm','desc');
-  if(CURRENT_USER.role==='coord') q=q.where('autorUid','==',CURRENT_USER.uid);
-  const snap=await q.limit(300).get();
-  VISITS=snap.docs.map(d=>{
-    const v={id:d.id,...d.data()};
-    v.filialIdx=FILIAIS.findIndex(f=>f.id===v.filialId);
+async function loadConfig() {
+  var snap = await db.collection('config').doc('global').get();
+  if (!snap.exists) return;
+  var d = snap.data();
+  if (d.ok_name)      CONFIG.ok.name      = d.ok_name;
+  if (d.ok_color)     CONFIG.ok.color     = d.ok_color;
+  if (d.visited_name)  CONFIG.visited.name  = d.visited_name;
+  if (d.visited_color) CONFIG.visited.color = d.visited_color;
+  if (d.visited_days)  CONFIG.visited.days  = d.visited_days;
+  if (d.pending_name)  CONFIG.pending.name  = d.pending_name;
+  if (d.pending_color) CONFIG.pending.color = d.pending_color;
+  if (d.pending_days)  CONFIG.pending.days  = d.pending_days;
+}
+async function loadVisitas() {
+  var q = db.collection('visitas').orderBy('criadoEm', 'desc');
+  if (CURRENT_USER.role === 'coord') q = q.where('autorUid', '==', CURRENT_USER.uid);
+  var snap = await q.limit(300).get();
+  VISITS = snap.docs.map(function(d) {
+    var v = Object.assign({ id: d.id }, d.data());
+    v.filialIdx = FILIAIS.findIndex(function(f) { return f.id === v.filialId; });
     return v;
   });
 }
-async function loadNotifConfig(){
+async function loadNotifConfig() {
   try {
-    const snap=await db.collection('notif_config').doc('global').get();
-    if(snap.exists) NOTIF_CONFIG={...NOTIF_CONFIG,...snap.data()};
-  } catch(e){}
-  applyNotifConfigToUI();
+    var snap = await db.collection('notif_config').doc('global').get();
+    if (snap.exists) {
+      var d = snap.data();
+      NOTIF_CONFIG.globalEnabled = d.globalEnabled || false;
+      NOTIF_CONFIG.recipients    = d.recipients    || [];
+      NOTIF_CONFIG.wa  = { enabled:d.wa_enabled||false, webhookUrl:d.wa_webhookUrl||'', token:d.wa_token||'', target:d.wa_target||'' };
+      NOTIF_CONFIG.tg  = { enabled:d.tg_enabled||false, botToken:d.tg_botToken||'', chatId:d.tg_chatId||'', webhookUrl:d.tg_webhookUrl||'' };
+      NOTIF_CONFIG.msgTemplate = d.msgTemplate || '';
+    }
+  } catch(e) {}
+  if (typeof applyNotifConfigToUI === 'function') applyNotifConfigToUI();
 }
 
-// ── REALTIME LISTENERS ────────────────────────────────────
-function setupRealtimeListeners(){
-  db.collection('filiais').onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const item={id:c.doc.id,...c.doc.data()};
-      if(c.type==='added'||c.type==='modified'){
-        const i=FILIAIS.findIndex(f=>f.id===item.id);
-        if(i>=0)FILIAIS[i]=item; else FILIAIS.push(item);
-      } else { FILIAIS=FILIAIS.filter(f=>f.id!==item.id); }
+// ── Realtime listeners ────────────────────────────────────────
+function setupRealtimeListeners() {
+  db.collection('filiais').onSnapshot(function(snap) {
+    snap.docChanges().forEach(function(c) {
+      var item = Object.assign({ id: c.doc.id }, c.doc.data());
+      if (c.type === 'added' || c.type === 'modified') {
+        var i = FILIAIS.findIndex(function(f) { return f.id === item.id; });
+        if (i >= 0) FILIAIS[i] = item; else FILIAIS.push(item);
+      } else {
+        FILIAIS = FILIAIS.filter(function(f) { return f.id !== item.id; });
+      }
     });
-    rebuildMarkers();renderList();updateStats();
-    if(document.getElementById('panel-filiais')?.classList.contains('active')) renderFilialTable();
-    setSyncState('synced','Sincronizado');
+    rebuildMarkers(); renderList(); updateStats();
+    var fp = document.getElementById('panel-filiais');
+    if (fp && fp.classList.contains('active')) renderFilialTable();
+    setSyncState('synced', 'Sincronizado');
   });
 
-  let vq=db.collection('visitas').orderBy('criadoEm','desc').limit(300);
-  if(CURRENT_USER.role==='coord') vq=vq.where('autorUid','==',CURRENT_USER.uid);
-  vq.onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const raw={id:c.doc.id,...c.doc.data()};
-      raw.filialIdx=FILIAIS.findIndex(f=>f.id===raw.filialId);
-      if(c.type==='added'||c.type==='modified'){
-        const i=VISITS.findIndex(v=>v.id===raw.id);
-        if(i>=0)VISITS[i]=raw; else VISITS.unshift(raw);
+  var vq = db.collection('visitas').orderBy('criadoEm', 'desc').limit(300);
+  if (CURRENT_USER.role === 'coord') vq = vq.where('autorUid', '==', CURRENT_USER.uid);
+  vq.onSnapshot(function(snap) {
+    snap.docChanges().forEach(function(c) {
+      var raw = Object.assign({ id: c.doc.id }, c.doc.data());
+      raw.filialIdx = FILIAIS.findIndex(function(f) { return f.id === raw.filialId; });
+      if (c.type === 'added' || c.type === 'modified') {
+        var i = VISITS.findIndex(function(v) { return v.id === raw.id; });
+        if (i >= 0) VISITS[i] = raw; else VISITS.unshift(raw);
       } else {
-        VISITS=VISITS.filter(v=>v.id!==raw.id);
-        if(activeRecordId===raw.id){
-          activeRecordId=null;
-          const el=document.getElementById('recDetail');
-          if(el)el.innerHTML='<div class="rec-empty"><div class="rec-empty-icon">📋</div><div class="rec-empty-text">Registro removido.</div></div>';
+        VISITS = VISITS.filter(function(v) { return v.id !== raw.id; });
+        if (activeRecordId === raw.id) {
+          activeRecordId = null;
+          var el = document.getElementById('recDetail');
+          if (el) el.innerHTML = '<div class="rec-empty"><div class="rec-empty-icon">📋</div><div class="rec-empty-text">Registro removido.</div></div>';
         }
       }
     });
-    renderRecordsList();updateStats();
-    setSyncState('synced','Sincronizado');
+    renderRecordsList(); updateStats(); setSyncState('synced', 'Sincronizado');
   });
 
-  db.collection('users').onSnapshot(snap=>{
-    snap.docChanges().forEach(c=>{
-      const item={id:c.doc.id,...c.doc.data()};
-      if(c.type==='added'||c.type==='modified'){
-        const i=APP_USERS.findIndex(u=>u.id===item.id);
-        if(i>=0)APP_USERS[i]=item; else APP_USERS.push(item);
-      } else { APP_USERS=APP_USERS.filter(u=>u.id!==item.id); }
+  db.collection('users').onSnapshot(function(snap) {
+    snap.docChanges().forEach(function(c) {
+      var item = Object.assign({ id: c.doc.id }, c.doc.data());
+      if (c.type === 'added' || c.type === 'modified') {
+        var i = USERS.findIndex(function(u) { return u.id === item.id; });
+        if (i >= 0) USERS[i] = item; else USERS.push(item);
+      } else {
+        USERS = USERS.filter(function(u) { return u.id !== item.id; });
+      }
     });
   });
 }
 
-// ── SAVE VISITA ───────────────────────────────────────────
-window.saveVisit = async function(){
-  const filialIdx=parseInt(document.getElementById('filialSelect').value);
-  const date=document.getElementById('visitDate').value;
-  const resp=document.getElementById('visitResponsavel').value.trim();
-  const result=document.getElementById('visitResult').value;
-  const obs=document.getElementById('visitObs').value.trim();
-  const editId=document.getElementById('visitEditId').value;
-  if(!resp||!date){showToast('Preencha responsável e data.','warn');return;}
-  const filial=FILIAIS[filialIdx]||{};
-  const demandas=visitDemandasModal.map(d=>({
-    text:document.getElementById('dem-text-'+d.id)?.value.trim()||'',
-    status:document.getElementById('dem-status-'+d.id)?.value||'open',
-    depTipo:document.getElementById('dem-dep-tipo-'+d.id)?.value||null,
-    depValor:document.getElementById('dem-dep-valor-'+d.id)?.value.trim()||null,
-  })).filter(d=>d.text);
-  setSyncState('syncing','Salvando...');
-  try {
-    const payload={
-      filialId:filial.id||'', filialCity:filial.city||'', filialState:filial.state||'',
-      date, responsavel:resp, result, temas:[...visitTags], demandas, obs,
-      autorUid:CURRENT_USER.uid, autorName:CURRENT_USER.name,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp(),
+// ── Operações Firestore ───────────────────────────────────────
+async function saveVisit() {
+  var filialIdx = parseInt(document.getElementById('filialSelect').value);
+  var date      = document.getElementById('visitDate').value;
+  var resp      = document.getElementById('visitResponsavel').value.trim();
+  var result    = document.getElementById('visitResult').value;
+  var obs       = document.getElementById('visitObs').value.trim();
+  var editId    = document.getElementById('visitEditId').value;
+  if (!resp || !date) { showToast('Preencha responsável e data.', 'warn'); return; }
+  var filial = FILIAIS[filialIdx] || {};
+  var demandas = visitDemandasModal.map(function(d) {
+    return {
+      text:     (document.getElementById('dem-text-'     +d.id)||{}).value||'',
+      status:   (document.getElementById('dem-status-'   +d.id)||{}).value||'open',
+      depTipo:  (document.getElementById('dem-dep-tipo-' +d.id)||{}).value||null,
+      depValor: (document.getElementById('dem-dep-valor-'+d.id)||{}).value||null,
     };
-    let savedId;
-    if(editId){
+  }).filter(function(d) { return d.text.trim(); });
+  setSyncState('syncing', 'Salvando...');
+  try {
+    var payload = {
+      filialId: filial.id||'', filialCity: filial.city||'', filialState: filial.state||'',
+      date: date, responsavel: resp, result: result,
+      temas: visitTags.slice(), demandas: demandas, obs: obs,
+      autorUid: CURRENT_USER.uid, autorName: CURRENT_USER.name||'',
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp(),
+    };
+    var savedId;
+    if (editId) {
       await db.collection('visitas').doc(editId).update(payload);
-      savedId=editId;
+      savedId = editId;
     } else {
-      payload.criadoEm=firebase.firestore.FieldValue.serverTimestamp();
-      const ref=await db.collection('visitas').add(payload);
-      savedId=ref.id;
+      payload.criadoEm = firebase.firestore.FieldValue.serverTimestamp();
+      var ref = await db.collection('visitas').add(payload);
+      savedId = ref.id;
     }
-    if(filial.id) await db.collection('filiais').doc(filial.id).update({
-      status:result, atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()
-    });
+    if (filial.id) {
+      await db.collection('filiais').doc(filial.id).update({
+        status: result, atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+      });
+    }
     closeVisitModal();
     await clearDraftFromStorage();
     await checkDraftBanner();
-    setSyncState('synced','Sincronizado');
-    showToast('✓ Relatório salvo com sucesso!');
-    activeRecordId=savedId;
-    fireNotifications({...payload,id:savedId,filialIdx});
-  } catch(e){setSyncState('error','Erro');showToast('Erro ao salvar: '+e.message,'err');}
-};
-
-// ── SAVE FILIAL ───────────────────────────────────────────
-async function addFilial(){
-  const city=document.getElementById('newCity').value.trim();
-  const state=document.getElementById('newState').value.trim().toUpperCase();
-  const coords=document.getElementById('newCoords').value.trim();
-  if(!city||!state){showToast('Preencha cidade e UF.','warn');return;}
-  let lat=-8.5,lng=-38.5;
-  if(coords){const p=coords.split(',');lat=parseFloat(p[0])||lat;lng=parseFloat(p[1])||lng;}
-  setSyncState('syncing','Salvando...');
-  try {
-    await db.collection('filiais').add({city,state,lat,lng,status:'ok',
-      criadoEm:firebase.firestore.FieldValue.serverTimestamp(),
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    document.getElementById('newCity').value='';
-    document.getElementById('newState').value='';
-    document.getElementById('newCoords').value='';
-    document.getElementById('addFilialForm').style.display='none';
-    setSyncState('synced','Sincronizado');
-    showToast('Filial adicionada!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    setSyncState('synced', 'Sincronizado');
+    showToast('✓ Relatório salvo!');
+    activeRecordId = savedId;
+    renderRecordsList();
+    fireNotifications(Object.assign({}, payload, { id: savedId, filialIdx: filialIdx }));
+  } catch(e) { setSyncState('error', 'Erro'); showToast('Erro: ' + e.message, 'err'); }
 }
-async function saveEdit(){
-  const idx=parseInt(document.getElementById('editIdx').value);
-  const filial=FILIAIS[idx]; if(!filial)return;
-  setSyncState('syncing','Salvando...');
+
+async function addFilial() {
+  var city   = document.getElementById('newCity').value.trim();
+  var state  = document.getElementById('newState').value.trim().toUpperCase();
+  var coords = document.getElementById('newCoords').value.trim();
+  if (!city || !state) { showToast('Preencha cidade e UF.', 'warn'); return; }
+  var lat = -8.5, lng = -38.5;
+  if (coords) { var p = coords.split(','); lat = parseFloat(p[0])||lat; lng = parseFloat(p[1])||lng; }
+  setSyncState('syncing', '');
+  try {
+    await db.collection('filiais').add({ city:city, state:state, lat:lat, lng:lng, status:'ok',
+      criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() });
+    ['newCity','newState','newCoords'].forEach(function(id) { document.getElementById(id).value=''; });
+    document.getElementById('addFilialForm').style.display='none';
+    setSyncState('synced','Sincronizado'); showToast('Filial adicionada!');
+  } catch(e) { setSyncState('error','Erro'); showToast('Erro: '+e.message,'err'); }
+}
+async function saveEdit() {
+  var idx = parseInt(document.getElementById('editIdx').value);
+  var filial = FILIAIS[idx]; if (!filial) return;
+  setSyncState('syncing','');
   try {
     await db.collection('filiais').doc(filial.id).update({
-      city:document.getElementById('editCity').value.trim(),
-      state:document.getElementById('editState').value.trim().toUpperCase(),
-      lat:parseFloat(document.getElementById('editLat').value),
-      lng:parseFloat(document.getElementById('editLng').value),
-      status:document.getElementById('editStatus').value,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()
+      city:   document.getElementById('editCity').value.trim(),
+      state:  document.getElementById('editState').value.trim().toUpperCase(),
+      lat:    parseFloat(document.getElementById('editLat').value),
+      lng:    parseFloat(document.getElementById('editLng').value),
+      status: document.getElementById('editStatus').value,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
     });
-    closeEditModal();setSyncState('synced','Sincronizado');showToast('Filial atualizada!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    closeEditModal(); setSyncState('synced','Sincronizado'); showToast('Filial atualizada!');
+  } catch(e) { setSyncState('error','Erro'); showToast('Erro: '+e.message,'err'); }
 }
-async function deleteFilialFromTable(idx){
-  const filial=FILIAIS[idx];
-  if(!filial||!confirm('Excluir a filial '+filial.city+'?'))return;
-  setSyncState('syncing','');
+async function deleteFilial(idx) {
+  var f = FILIAIS[idx];
+  if (!f || !confirm('Excluir '+f.city+'?')) return;
+  try { await db.collection('filiais').doc(f.id).delete(); showToast('Filial removida.'); }
+  catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+async function saveUser() {
+  var name   = document.getElementById('userName').value.trim();
+  var email  = document.getElementById('userEmail').value.trim();
+  var role   = document.getElementById('userRole').value;
+  var active = document.getElementById('userActive').value === 'true';
+  var editId = document.getElementById('userId').value;
+  if (!name || !email) { showToast('Preencha nome e e-mail.','warn'); return; }
+  if (!editId) {
+    showToast('Crie o usuário em Firebase Console → Authentication. Depois edite aqui.','warn');
+    closeUserModal(); return;
+  }
   try {
-    await db.collection('filiais').doc(filial.id).delete();
-    setSyncState('synced','Sincronizado');showToast('Filial removida.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+    await db.collection('users').doc(editId).update({ name:name, email:email, role:role, active:active,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() });
+    closeUserModal(); showToast('Usuário atualizado!');
+  } catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+async function deleteUser(userId) {
+  if (!confirm('Desativar este usuário?')) return;
+  try { await db.collection('users').doc(userId).update({ active:false,
+    atualizadoEm: firebase.firestore.FieldValue.serverTimestamp() }); showToast('Usuário desativado.'); }
+  catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+async function saveConfig() {
+  CONFIG.ok.name        = document.getElementById('conf-ok-name').value;
+  CONFIG.ok.color       = document.getElementById('conf-ok-color').value;
+  CONFIG.visited.name   = document.getElementById('conf-visited-name').value;
+  CONFIG.visited.color  = document.getElementById('conf-visited-color').value;
+  CONFIG.visited.days   = parseInt(document.getElementById('conf-visited-days').value)||30;
+  CONFIG.pending.name   = document.getElementById('conf-pending-name').value;
+  CONFIG.pending.color  = document.getElementById('conf-pending-color').value;
+  CONFIG.pending.days   = parseInt(document.getElementById('conf-pending-days').value)||60;
+  try {
+    await db.collection('config').doc('global').set({
+      ok_name:CONFIG.ok.name, ok_color:CONFIG.ok.color,
+      visited_name:CONFIG.visited.name, visited_color:CONFIG.visited.color, visited_days:CONFIG.visited.days,
+      pending_name:CONFIG.pending.name, pending_color:CONFIG.pending.color, pending_days:CONFIG.pending.days,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+    });
+    refreshMarkers(); updateLegend(); showToast('Configurações salvas!');
+  } catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+function resetConfig() {
+  ['ok','visited','pending'].forEach(function(k) {
+    var map = {ok:['Regular','#00d4aa'],visited:['Visitada','#0088ff'],pending:['Pendente','#ff6b35']};
+    document.getElementById('conf-'+k+'-name').value  = map[k][0];
+    document.getElementById('conf-'+k+'-color').value = map[k][1];
+    document.getElementById('conf-'+k+'-hex').value   = map[k][1];
+  });
+  document.getElementById('conf-visited-days').value = '30';
+  document.getElementById('conf-pending-days').value = '60';
+  previewConfig();
+}
+async function saveProfiles() {
+  try {
+    var batch = db.batch();
+    Object.keys(PROFILES).forEach(function(role) {
+      if (role === 'admin') return;
+      batch.set(db.collection('profiles').doc(role), PROFILES[role]);
+    });
+    await batch.commit(); showToast('Permissões salvas!');
+  } catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+async function deleteVisit(id) {
+  if (!confirm('Excluir este registro?')) return;
+  try { await db.collection('visitas').doc(id).delete(); showToast('Registro excluído.'); }
+  catch(e) { showToast('Erro: '+e.message,'err'); }
+}
+async function saveNotifConfig() {
+  var g = function(id) { return document.getElementById(id); };
+  if (g('notifGlobalEnabled')) NOTIF_CONFIG.globalEnabled = g('notifGlobalEnabled').checked;
+  if (g('waEnabled'))    NOTIF_CONFIG.wa.enabled    = g('waEnabled').checked;
+  if (g('waWebhookUrl')) NOTIF_CONFIG.wa.webhookUrl = g('waWebhookUrl').value.trim();
+  if (g('waToken'))      NOTIF_CONFIG.wa.token      = g('waToken').value.trim();
+  if (g('waTarget'))     NOTIF_CONFIG.wa.target     = g('waTarget').value.trim();
+  if (g('tgEnabled'))    NOTIF_CONFIG.tg.enabled    = g('tgEnabled').checked;
+  if (g('tgBotToken'))   NOTIF_CONFIG.tg.botToken   = g('tgBotToken').value.trim();
+  if (g('tgChatId'))     NOTIF_CONFIG.tg.chatId     = g('tgChatId').value.trim();
+  if (g('tgWebhookUrl')) NOTIF_CONFIG.tg.webhookUrl = g('tgWebhookUrl').value.trim();
+  if (g('notifMsgTemplate')) NOTIF_CONFIG.msgTemplate = g('notifMsgTemplate').value;
+  try {
+    await db.collection('notif_config').doc('global').set({
+      globalEnabled:NOTIF_CONFIG.globalEnabled, recipients:NOTIF_CONFIG.recipients,
+      wa_enabled:NOTIF_CONFIG.wa.enabled, wa_webhookUrl:NOTIF_CONFIG.wa.webhookUrl,
+      wa_token:NOTIF_CONFIG.wa.token, wa_target:NOTIF_CONFIG.wa.target,
+      tg_enabled:NOTIF_CONFIG.tg.enabled, tg_botToken:NOTIF_CONFIG.tg.botToken,
+      tg_chatId:NOTIF_CONFIG.tg.chatId, tg_webhookUrl:NOTIF_CONFIG.tg.webhookUrl,
+      msgTemplate:NOTIF_CONFIG.msgTemplate,
+      atualizadoEm: firebase.firestore.FieldValue.serverTimestamp()
+    });
+  } catch(e) {}
 }
 
-// ── SAVE USUÁRIO ──────────────────────────────────────────
-async function saveUser(){
-  const name=document.getElementById('userName').value.trim();
-  const email=document.getElementById('userEmail').value.trim();
-  const role=document.getElementById('userRole').value;
-  const active=document.getElementById('userActive').value==='true';
-  const phone=document.getElementById('userPhone')?.value.trim()||'';
-  const uf=document.getElementById('userUF')?.value||'';
-  const editId=document.getElementById('userId').value;
-  if(!name||!email){showToast('Preencha nome e e-mail.','warn');return;}
-  setSyncState('syncing','Salvando...');
-  try {
-    if(editId){
-      await db.collection('users').doc(editId).update({name,email,role,active,phone,uf,
-        atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-      showToast('Usuário atualizado!');
-    } else {
-      showToast('Para criar usuários: Firebase Console → Authentication → Add user. Anote o UID e crie o doc em users/{UID}.','warn');
-      closeUserModal();setSyncState('synced','');return;
-    }
-    closeUserModal();setSyncState('synced','Sincronizado');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
+// ── Rascunhos → Firestore ─────────────────────────────────────
+function getDraftKey() { return (CURRENT_USER && CURRENT_USER.uid) || 'anon'; }
+async function saveDraftToStorage(data) {
+  try { await db.collection('rascunhos').doc(getDraftKey()).set(
+    Object.assign({}, data, { savedAt: firebase.firestore.FieldValue.serverTimestamp() })
+  ); } catch(e) {}
 }
-async function deleteUser(userId){
-  if(!confirm('Desativar este usuário?'))return;
-  setSyncState('syncing','');
-  try {
-    await db.collection('users').doc(userId).update({active:false,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    setSyncState('synced','Sincronizado');showToast('Usuário desativado.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
-}
-
-// ── SAVE CONFIG ───────────────────────────────────────────
-async function saveConfig(){
-  CONFIG.ok.name=document.getElementById('conf-ok-name').value;
-  CONFIG.ok.color=document.getElementById('conf-ok-color').value;
-  CONFIG.visited.name=document.getElementById('conf-visited-name').value;
-  CONFIG.visited.color=document.getElementById('conf-visited-color').value;
-  CONFIG.visited.days=parseInt(document.getElementById('conf-visited-days').value)||30;
-  CONFIG.pending.name=document.getElementById('conf-pending-name').value;
-  CONFIG.pending.color=document.getElementById('conf-pending-color').value;
-  CONFIG.pending.days=parseInt(document.getElementById('conf-pending-days').value)||60;
-  setSyncState('syncing','');
-  try {
-    await db.collection('config').doc('global').set({...CONFIG,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-    refreshMarkers();updateLegend();
-    setSyncState('synced','Sincronizado');showToast('Configurações salvas!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
-}
-
-// ── SAVE PROFILES ─────────────────────────────────────────
-async function saveProfiles(){
-  setSyncState('syncing','');
-  try {
-    const batch=db.batch();
-    for(const [role,perms] of Object.entries(PROFILES)){
-      if(role==='admin')continue;
-      batch.set(db.collection('profiles').doc(role),perms);
-    }
-    await batch.commit();
-    setSyncState('synced','Sincronizado');showToast('Permissões salvas!');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
-}
-
-// ── DELETE VISITA ─────────────────────────────────────────
-async function deleteVisit(id){
-  if(!confirm('Excluir este registro de visita?'))return;
-  setSyncState('syncing','');
-  try {
-    await db.collection('visitas').doc(id).delete();
-    setSyncState('synced','Sincronizado');showToast('Registro excluído.');
-  } catch(e){setSyncState('error','Erro');showToast('Erro: '+e.message,'err');}
-}
-
-// ── SAVE NOTIF CONFIG ─────────────────────────────────────
-async function saveNotifConfig(){
-  const el=id=>document.getElementById(id);
-  if(el('notifGlobalEnabled'))NOTIF_CONFIG.globalEnabled=el('notifGlobalEnabled').checked;
-  if(el('waEnabled'))NOTIF_CONFIG.wa.enabled=el('waEnabled').checked;
-  if(el('waWebhookUrl'))NOTIF_CONFIG.wa.webhookUrl=el('waWebhookUrl').value.trim();
-  if(el('waToken'))NOTIF_CONFIG.wa.token=el('waToken').value.trim();
-  if(el('waTarget'))NOTIF_CONFIG.wa.target=el('waTarget').value.trim();
-  if(el('tgEnabled'))NOTIF_CONFIG.tg.enabled=el('tgEnabled').checked;
-  if(el('tgBotToken'))NOTIF_CONFIG.tg.botToken=el('tgBotToken').value.trim();
-  if(el('tgChatId'))NOTIF_CONFIG.tg.chatId=el('tgChatId').value.trim();
-  if(el('tgWebhookUrl'))NOTIF_CONFIG.tg.webhookUrl=el('tgWebhookUrl').value.trim();
-  if(el('notifMsgTemplate'))NOTIF_CONFIG.msgTemplate=el('notifMsgTemplate').value;
-  try {
-    await db.collection('notif_config').doc('global').set({...NOTIF_CONFIG,
-      atualizadoEm:firebase.firestore.FieldValue.serverTimestamp()});
-  } catch(e){}
-}
-
-// ── RASCUNHOS → FIRESTORE ─────────────────────────────────
-function getDraftKey(){return CURRENT_USER?.uid||'anon';}
-async function saveDraftToStorage(data){
-  try{await db.collection('rascunhos').doc(getDraftKey()).set({...data,
-    savedAt:firebase.firestore.FieldValue.serverTimestamp()});}catch(e){}
-}
-async function loadDraftFromStorage(){
-  try{const s=await db.collection('rascunhos').doc(getDraftKey()).get();
-    if(s.exists)return s.data();}catch(e){}
+async function loadDraftFromStorage() {
+  try { var s = await db.collection('rascunhos').doc(getDraftKey()).get(); if (s.exists) return s.data(); } catch(e) {}
   return null;
 }
-async function clearDraftFromStorage(){
-  try{await db.collection('rascunhos').doc(getDraftKey()).delete();}catch(e){}
+async function clearDraftFromStorage() {
+  try { await db.collection('rascunhos').doc(getDraftKey()).delete(); } catch(e) {}
 }
 
-// ── PERMISSÃO IA ──────────────────────────────────────────
-function canUseAI(){
-  const role=CURRENT_USER?.role;
-  return role&&PROFILES[role]?.ai_summary===true;
+// ── Permissão IA ──────────────────────────────────────────────
+function canUseAI() {
+  var role = CURRENT_USER && CURRENT_USER.role;
+  return !!(role && PROFILES[role] && PROFILES[role].ai_summary === true);
 }
 
-// ── MAP INIT ──────────────────────────────────────────────
-function initMap(){
-  if(map)return;
-  map=L.map('map',{center:[-8.5,-38.5],zoom:6,zoomControl:false,attributionControl:false});
+// ── Mapa ──────────────────────────────────────────────────────
+function initMap() {
+  if (map) return;
+  map = L.map('map', { center:[-8.5,-38.5], zoom:6, zoomControl:false, attributionControl:false });
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-  L.control.zoom({position:'bottomleft'}).addTo(map);
+  L.control.zoom({ position:'bottomleft' }).addTo(map);
   applyBrazilMask();
+}
+
+// ── Navegação ─────────────────────────────────────────────────
+function showView(view) {
+  document.querySelectorAll('.view').forEach(function(v) { v.classList.remove('active'); });
+  document.querySelectorAll('.nav-tab').forEach(function(t) { t.classList.remove('active','active-settings'); });
+  document.getElementById('view-'+view).classList.add('active');
+  var tab = document.getElementById('tab-'+view);
+  if (tab) tab.classList.add(view==='settings' ? 'active-settings' : 'active');
+  if (view==='map') setTimeout(function() { if (map) map.invalidateSize(); }, 50);
+  if (view==='settings') renderFilialTable();
+  if (view==='records')  renderRecordsList();
+}
+function showPanel(panel, btn) {
+  document.querySelectorAll('.settings-panel').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.settings-nav-item').forEach(function(b) { b.classList.remove('active'); });
+  document.getElementById('panel-'+panel).classList.add('active');
+  btn.classList.add('active');
+  if (panel==='users')    renderUsersGrid();
+  if (panel==='profiles') renderProfilesGrid();
+  if (panel==='filiais')  renderFilialTable();
+  if (panel==='notif')    applyNotifConfigToUI();
 }
 
 const STATE_BOUNDS = {
@@ -1668,6 +1749,8 @@ const ROLE_META = {
   gerente: { label:'Gerente',       cls:'role-gerente', bg:'#0088ff', icon:'📋' },
   coord:   { label:'Coordenador',   cls:'role-coord',   bg:'#00d4aa', icon:'📌' },
 };
+let nextUserId = 7;
+
 
 const PERM_GROUPS = [
   { group:'Visitas', perms:[
@@ -1695,12 +1778,7 @@ const PERM_GROUPS = [
   ]},
 ];
 
-const DEPARTAMENTOS = [
-  'Comercial','Financeiro','Logística','RH','TI','Jurídico',
-  'Marketing','Operações','Qualidade','Diretoria','Suporte'
-];
-
-// ═══ UI FUNCTIONS ═══════════════════════════════════════════════
+// ═══ UI / MAPA ═══════════════════════════════════════════════
 function applyBrazilMask() {
   const mapEl=document.getElementById('map');
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
@@ -1857,14 +1935,6 @@ function buildUfChips(){
 function openVisitModal(){document.getElementById('visitModalOverlay').classList.add('open');document.getElementById('visitDate').value=new Date().toISOString().split('T')[0];}
 function openVisitModalForFilial(idx){openVisitModal();document.getElementById('filialSelect').value=idx;}
 function closeVisitModal(){document.getElementById('visitModalOverlay').classList.remove('open');}
-function saveVisit(){
-  const idx=parseInt(document.getElementById('filialSelect').value);
-  const result=document.getElementById('visitResult').value;
-  if(!isNaN(idx)){FILIAIS[idx].status=result;markers[idx]?.setIcon(createMarkerIcon(result,idx===activeFilialIndex,isMarkerDimmed(FILIAIS[idx])));markers[idx]?.setPopupContent(buildPopup(FILIAIS[idx],idx));renderList();updateStats();}
-  closeVisitModal();
-}
-
-// ═══ SETTINGS: FILIAIS ═══════════════════════════════════════
 function renderFilialTable(){
   const tbody=document.getElementById('filiaisTableBody'); tbody.innerHTML='';
   FILIAIS.forEach((f,i)=>{
@@ -1877,28 +1947,7 @@ function renderFilialTable(){
   });
 }
 function showAddRow(){const f=document.getElementById('addFilialForm');f.style.display=f.style.display==='none'?'grid':'none';if(f.style.display==='grid')document.getElementById('newCity').focus();}
-const COORD_FB={PB:[-7.12,-35.88],CE:[-3.72,-38.54],PE:[-8.05,-34.95],RN:[-5.79,-35.21],MA:[-2.53,-44.31],AL:[-9.67,-35.74],RJ:[-22.91,-43.17],SP:[-23.55,-46.63]};
-function addFilial(){
-  const city=document.getElementById('newCity').value.trim();
-  const state=document.getElementById('newState').value.trim().toUpperCase();
-  const raw=document.getElementById('newCoords').value.trim();
-  if(!city||!state){alert('Preencha cidade e UF.');return;}
-  let lat,lng;
-  if(raw){const p=raw.split(',');lat=parseFloat(p[0]);lng=parseFloat(p[1]);}
-  else{const fb=COORD_FB[state]||[-15.78,-47.93];lat=fb[0]+(Math.random()-0.5)*1.5;lng=fb[1]+(Math.random()-0.5)*1.5;}
-  FILIAIS.push({city,state,lat,lng,status:'ok'});
-  document.getElementById('newCity').value=''; document.getElementById('newState').value=''; document.getElementById('newCoords').value='';
-  document.getElementById('addFilialForm').style.display='none';
-  rebuildMarkers();buildUfChips();renderList();updateStats();renderFilialTable();
-}
-function deleteFilial(idx){
-  if(!confirm(`Remover "${FILIAIS[idx].city}"?`))return;
-  FILIAIS.splice(idx,1);
-  if(activeFilialIndex===idx)activeFilialIndex=null; else if(activeFilialIndex>idx)activeFilialIndex--;
-  rebuildMarkers();buildUfChips();renderList();updateStats();renderFilialTable();
-}
-
-// ═══ MODAL: EDITAR FILIAL ════════════════════════════════════
+const COORD_FB={PB:[-7.12,-35.88],CE:[-3.72,-38.54],PE:[-8.05,-34.95],RN:[-5.79,-35.21],MA:[-2.53,-44.31],AL:[-9.67,-35.74],RJ:[-22.91,-43.17],SP:[-23.55,-46.63]};// ═══ MODAL: EDITAR FILIAL ════════════════════════════════════
 function openEditModal(idx){
   const f=FILIAIS[idx];
   document.getElementById('editIdx').value=idx; document.getElementById('editCity').value=f.city;
@@ -1907,33 +1956,9 @@ function openEditModal(idx){
   document.getElementById('editModalOverlay').classList.add('open');
 }
 function closeEditModal(){document.getElementById('editModalOverlay').classList.remove('open');}
-function saveEdit(){
-  const idx=parseInt(document.getElementById('editIdx').value);
-  FILIAIS[idx].city=document.getElementById('editCity').value.trim();
-  FILIAIS[idx].state=document.getElementById('editState').value.trim().toUpperCase();
-  FILIAIS[idx].lat=parseFloat(document.getElementById('editLat').value);
-  FILIAIS[idx].lng=parseFloat(document.getElementById('editLng').value);
-  FILIAIS[idx].status=document.getElementById('editStatus').value;
-  closeEditModal(); rebuildMarkers();buildUfChips();renderList();updateStats();renderFilialTable();
-}
-
 // ═══ SETTINGS: STATUS ════════════════════════════════════════
 function syncColor(s){const h=document.getElementById(`conf-${s}-hex`).value;if(/^#[0-9a-fA-F]{6}$/.test(h)){document.getElementById(`conf-${s}-color`).value=h;previewConfig();}}
-function previewConfig(){['ok','visited','pending'].forEach(s=>{const c=document.getElementById(`conf-${s}-color`).value;document.getElementById(`conf-${s}-hex`).value=c;document.getElementById(`conf-${s}-dot`).style.background=c;});}
-function saveConfig(){
-  ['ok','visited','pending'].forEach(s=>{CONFIG[s].name=document.getElementById(`conf-${s}-name`).value;CONFIG[s].color=document.getElementById(`conf-${s}-color`).value;});
-  CONFIG.visited.days=parseInt(document.getElementById('conf-visited-days').value)||30;
-  CONFIG.pending.days=parseInt(document.getElementById('conf-pending-days').value)||60;
-  ['ok','visited','pending'].forEach(s=>{document.getElementById(`leg-${s}`).style.background=CONFIG[s].color;document.getElementById(`leg-${s}-label`).textContent=CONFIG[s].name;});
-  refreshMarkers();renderList();renderFilialTable();alert('Configurações salvas!');
-}
-function resetConfig(){
-  if(!confirm('Restaurar configurações padrão?'))return;
-  CONFIG.ok={name:'Regular',color:'#00d4aa',days:null};CONFIG.visited={name:'Visitada',color:'#0088ff',days:30};CONFIG.pending={name:'Pendente',color:'#ff6b35',days:60};
-  ['ok','visited','pending'].forEach(s=>{document.getElementById(`conf-${s}-name`).value=CONFIG[s].name;document.getElementById(`conf-${s}-color`).value=CONFIG[s].color;document.getElementById(`conf-${s}-hex`).value=CONFIG[s].color;document.getElementById(`conf-${s}-dot`).style.background=CONFIG[s].color;});
-  document.getElementById('conf-visited-days').value=30;document.getElementById('conf-pending-days').value=60;refreshMarkers();renderList();
-}
-function applyDisplaySettings(){
+function previewConfig(){['ok','visited','pending'].forEach(s=>{const c=document.getElementById(`conf-${s}-color`).value;document.getElementById(`conf-${s}-hex`).value=c;document.getElementById(`conf-${s}-dot`).style.background=c;});}unction applyDisplaySettings(){
   const legend=document.getElementById('tog-legend').checked; const filters=document.getElementById('tog-filters').checked;
   const sidebar=document.getElementById('tog-sidebar').checked; const autozoom=document.getElementById('tog-autozoom').checked;
   CONFIG.display={legend,filters,sidebar,autozoom};
@@ -1944,12 +1969,12 @@ function applyDisplaySettings(){
   else if(sidebar&&sb.classList.contains('collapsed'))toggleSidebar();
 }
 
-// ═══ APP_USERS ═══════════════════════════════════════════════════
+// ═══ USERS ═══════════════════════════════════════════════════
 function getInitials(name){return name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();}
 
 function renderUsersGrid(){
   const grid=document.getElementById('usersGrid'); grid.innerHTML='';
-  APP_USERS.forEach(u=>{
+  USERS.forEach(u=>{
     const meta=ROLE_META[u.role];
     const card=document.createElement('div'); card.className='user-card';
     card.innerHTML=`
@@ -1986,7 +2011,7 @@ function updateRolePreview() {
 }
 
 function openUserModal(id){
-  const u = id ? APP_USERS.find(u => u.id === id) : null;
+  const u = id ? USERS.find(u => u.id === id) : null;
   document.getElementById('userModalTitle').textContent = u ? 'Editar Usuário' : 'Novo Usuário';
   document.getElementById('userModalSub').textContent = u ? `Editando dados de ${u.name}` : 'Preencha os dados do novo usuário';
   document.getElementById('userId').value     = u ? u.id : '';
@@ -2003,36 +2028,7 @@ function openUserModal(id){
 
 function closeUserModal(){ document.getElementById('userModalOverlay').classList.remove('open'); }
 
-function saveUser(){
-  const id     = document.getElementById('userId').value;
-  const name   = document.getElementById('userName').value.trim();
-  const email  = document.getElementById('userEmail').value.trim();
-  const phone  = document.getElementById('userPhone').value.trim();
-  const uf     = document.getElementById('userUF').value;
-  const role   = document.getElementById('userRole').value;
-  const active = document.getElementById('userActive').value === 'true';
-  if (!name || !email) { alert('Preencha nome e e-mail.'); return; }
-  if (!id) {
-    const pass  = document.getElementById('userPass')?.value || '';
-    const passC = document.getElementById('userPassConfirm')?.value || '';
-    if (pass && pass !== passC) { alert('As senhas não coincidem.'); return; }
-  }
-  if (id) {
-    const u = APP_USERS.find(u => u.id === parseInt(id));
-    if (u) Object.assign(u, { name, email, phone, uf, role, active });
-  } else {
-    APP_USERS.push({ id: nextUserId++, name, email, phone, uf, role, active });
-  }
-  closeUserModal(); renderUsersGrid();
-}
-
-function deleteUser(id){
-  const u = APP_USERS.find(u => u.id === id);
-  if (!u || !confirm(`Remover "${u.name}" do sistema?`)) return;
-  APP_USERS = APP_USERS.filter(u => u.id !== id); renderUsersGrid();
-}
-
-// ═══ APP_USERS — state ═══════════════════════════════════════════
+// ═══ USERS — state ═══════════════════════════════════════════
 let userRoleFilter = 'all';
 
 function setUserRoleFilter(role, btn) {
@@ -2051,8 +2047,8 @@ function renderUsersSummary() {
     { key:'coord',   ...ROLE_META.coord,   color:'rgba(0,212,170,0.15)'   },
   ];
   s.innerHTML = roles.map(r => {
-    const total = APP_USERS.filter(u => u.role === r.key).length;
-    const ativos = APP_USERS.filter(u => u.role === r.key && u.active).length;
+    const total = USERS.filter(u => u.role === r.key).length;
+    const ativos = USERS.filter(u => u.role === r.key && u.active).length;
     return `<div class="summary-card">
       <div class="summary-icon" style="background:${r.color};">${r.icon}</div>
       <div>
@@ -2067,60 +2063,8 @@ function renderUsersSummary() {
 // Últimos acessos fictícios para demo
 const LAST_ACCESS = { 1:'Hoje, 09:14', 2:'Ontem, 16:32', 3:'Hoje, 11:05', 4:'15/01/2026', 5:'Hoje, 08:47', 6:'17/02/2026' };
 
-function renderUsersGrid() {
-  renderUsersSummary();
-  const tbody = document.getElementById('usersTableBody');
-  if (!tbody) return;
-  const search = (document.getElementById('usersSearchInput')?.value || '').toLowerCase();
-  const filtered = APP_USERS.filter(u => {
-    const matchRole = userRoleFilter === 'all' || u.role === userRoleFilter;
-    const matchSearch = !search || u.name.toLowerCase().includes(search) || u.email.toLowerCase().includes(search);
-    return matchRole && matchSearch;
-  });
-
-  if (!filtered.length) {
-    tbody.innerHTML = `<tr><td colspan="5" style="text-align:center;padding:32px;color:var(--muted);font-size:13px;">Nenhum usuário encontrado</td></tr>`;
-    return;
-  }
-
-  const initials = name => name.split(' ').slice(0,2).map(n=>n[0]).join('').toUpperCase();
-  const avatarColors = { admin:'#ef4444', diretor:'#a855f7', gerente:'#0088ff', coord:'#00d4aa' };
-
-  tbody.innerHTML = filtered.map(u => {
-    const meta = ROLE_META[u.role];
-    const bg = avatarColors[u.role];
-    const last = LAST_ACCESS[u.id] || '—';
-    return `<tr>
-      <td>
-        <div class="user-name-cell">
-          <div class="user-avatar" style="background:${bg}22;color:${bg};border:1px solid ${bg}44;">${initials(u.name)}</div>
-          <div>
-            <div class="user-name">${u.name}</div>
-            <div class="user-email">${u.email}</div>
-          </div>
-        </div>
-      </td>
-      <td><span class="role-badge role-${u.role}">${meta.icon} ${meta.label}</span></td>
-      <td>
-        <div class="status-pill ${u.active ? 'active' : 'inactive'}">
-          <div class="status-pill-dot" style="background:${u.active ? 'var(--accent)' : 'var(--muted)'}"></div>
-          ${u.active ? 'Ativo' : 'Inativo'}
-        </div>
-      </td>
-      <td style="font-size:12px;color:var(--muted);">${last}</td>
-      <td>
-        <div class="td-actions">
-          <button class="btn btn-ghost btn-sm" onclick="openUserModal(${u.id})">✏ Editar</button>
-          <button class="btn btn-${u.active ? 'warn' : 'ghost'} btn-sm" onclick="toggleUserActive(${u.id})">${u.active ? '⏸ Suspender' : '▶ Ativar'}</button>
-          <button class="btn btn-danger btn-sm" onclick="deleteUser(${u.id})">✕</button>
-        </div>
-      </td>
-    </tr>`;
-  }).join('');
-}
-
 function toggleUserActive(id) {
-  const u = APP_USERS.find(u => u.id === id);
+  const u = USERS.find(u => u.id === id);
   if (u) { u.active = !u.active; renderUsersGrid(); }
 }
 
@@ -2134,7 +2078,7 @@ function renderProfilesGrid() {
   if (!tabs || !content) return;
 
   tabs.innerHTML = Object.entries(ROLE_META).map(([key, meta]) => {
-    const count = APP_USERS.filter(u => u.role === key).length;
+    const count = USERS.filter(u => u.role === key).length;
     return `<button class="profile-tab ${key === activeProfileTab ? 'active' : ''}" onclick="switchProfileTab('${key}',this)">
       <span class="profile-tab-icon">${meta.icon}</span>${meta.label}
       <span style="font-size:10px;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:1px 7px;margin-left:4px;">${count}</span>
@@ -2155,8 +2099,8 @@ function renderProfilePane(roleKey) {
   const content = document.getElementById('profilesContent');
   const meta = ROLE_META[roleKey];
   const isAdmin = roleKey === 'admin';
-  const count = APP_USERS.filter(u => u.role === roleKey).length;
-  const ativos = APP_USERS.filter(u => u.role === roleKey && u.active).length;
+  const count = USERS.filter(u => u.role === roleKey).length;
+  const ativos = USERS.filter(u => u.role === roleKey && u.active).length;
 
   const descriptions = {
     admin:   'Acesso total ao sistema. Pode configurar tudo, gerenciar usuários e visualizar qualquer registro.',
@@ -2213,90 +2157,17 @@ function renderProfilePane(roleKey) {
     </div>`;
 }
 
-function saveProfiles() {
-  // Em produção, enviaria PROFILES para o backend
-  const toast = document.createElement('div');
-  toast.style.cssText = 'position:fixed;bottom:32px;left:50%;transform:translateX(-50%);background:#111827;border:1px solid #00d4aa;color:#00d4aa;padding:10px 22px;border-radius:10px;font-size:13px;font-weight:500;z-index:9999;box-shadow:0 4px 20px rgba(0,0,0,0.5);';
-  toast.textContent = '✓ Permissões salvas com sucesso';
-  document.body.appendChild(toast);
-  setTimeout(() => toast.remove(), 2800);
-}
-
 
 
 // ═══════════════════════════════════════════════════════════
 // DADOS DE VISITAS / REGISTROS
 // ═══════════════════════════════════════════════════════════
-const DEPARTAMENTOS = [
-  'Comercial','Financeiro','Logística','RH','TI','Jurídico',
-  'Marketing','Operações','Qualidade','Diretoria','Suporte'
-];
-
-let VISITS = [
-  {
-    id:'v001', filialIdx:6, date:'2025-01-15', responsavel:'Ana Lima', result:'visited',
-    temas:['Metas de vendas','Equipe reduzida','Treinamento CRM'],
-    demandas:[
-      { text:'Contratar 2 atendentes para reforço no turno da tarde', status:'open', depTipo:'depto', depValor:'RH' },
-      { text:'Atualizar sistema de ponto eletrônico', status:'solved', depTipo:null, depValor:null },
-      { text:'Liberar verba para reforma do balcão de atendimento', status:'dep', depTipo:'pessoa', depValor:'Carlos Mendes' },
-    ],
-    obs:'Unidade com boa estrutura física mas com equipe defasada. Gerente local demonstrou comprometimento. Agenda de treinamento deve ser prioridade para o próximo trimestre.'
-  },
-  {
-    id:'v002', filialIdx:2, date:'2025-01-22', responsavel:'Beatriz Souza', result:'visited',
-    temas:['Fluxo de caixa','Inadimplência','Promoções locais'],
-    demandas:[
-      { text:'Revisar política de crédito para clientes recorrentes', status:'dep', depTipo:'depto', depValor:'Financeiro' },
-      { text:'Instalar câmeras no estacionamento', status:'open', depTipo:null, depValor:null },
-    ],
-    obs:'Inadimplência acima da média regional (8,2%). Gerente já iniciou contato com clientes em atraso. Necessário suporte do financeiro para definir política de renegociação.'
-  },
-  {
-    id:'v003', filialIdx:16, date:'2025-02-03', responsavel:'Ana Lima', result:'pending',
-    temas:['Expansão da loja','Concorrência local','Perfil do cliente'],
-    demandas:[
-      { text:'Análise de viabilidade para expansão de 80m²', status:'dep', depTipo:'depto', depValor:'Comercial' },
-      { text:'Levantamento de concorrentes no raio de 5km', status:'open', depTipo:null, depValor:null },
-      { text:'Capacitação em atendimento diferenciado', status:'solved', depTipo:null, depValor:null },
-    ],
-    obs:'Unidade em posição estratégica com alto potencial de crescimento. Concorrente novo a 300m pode impactar faturamento nos próximos meses. Retorno previsto para março.'
-  },
-  {
-    id:'v004', filialIdx:24, date:'2025-02-10', responsavel:'Fernanda Costa', result:'visited',
-    temas:['Satisfação do cliente','NPS','Pós-venda'],
-    demandas:[
-      { text:'Implementar pesquisa de satisfação pós-compra', status:'open', depTipo:'depto', depValor:'TI' },
-      { text:'Treinar equipe em técnicas de pós-venda ativo', status:'solved', depTipo:null, depValor:null },
-    ],
-    obs:'NPS da unidade está em 62 — abaixo da meta de 70. Equipe receptiva a mudanças. Implementação da pesquisa digital pode ser o diferencial para reversão do indicador.'
-  },
-  {
-    id:'v005', filialIdx:34, date:'2025-02-18', responsavel:'Diego Alves', result:'ok',
-    temas:['Estoque','Ruptura de gôndola','Fornecedor'],
-    demandas:[
-      { text:'Revisar mix de produtos com maior giro', status:'dep', depTipo:'depto', depValor:'Comercial' },
-      { text:'Negociar prazo menor de entrega com fornecedor principal', status:'open', depTipo:'pessoa', depValor:'Beatriz Souza' },
-      { text:'Reorganizar layout do depósito', status:'solved', depTipo:null, depValor:null },
-    ],
-    obs:'Ruptura recorrente em 4 SKUs de alto giro. Fornecedor com prazo de entrega superior a 15 dias — meta é reduzir para 7. Gerente já mapeou fornecedor alternativo regional.'
-  },
-];
-let nextVisitId = 6;
-
 let activeRecordId = null;
 let visitTags = [];
 let visitDemandasModal = [];
 
 // Usuário atual simulado (perfil: admin pode usar IA)
-const CURRENT_USER = { id:1, name:'Ana Lima', role:'admin' };
-
 // permissão IA: admin e diretor podem gerar resumo
-function canUseAI() {
-  const role = CURRENT_USER.role;
-  return PROFILES[role]?.ai_summary !== false && (role==='admin'||role==='diretor'||role==='gerente');
-}
-
 // ── RENDERIZAR LISTA DE REGISTROS ─────────────────────────
 function renderRecordsList() {
   const search = (document.getElementById('recSearch')?.value || '').toLowerCase();
@@ -2545,64 +2416,7 @@ Seja direto, objetivo e use linguagem executiva. Máximo 180 palavras.`;
   }
 }
 
-// ── SALVAR VISITA (expandido) ─────────────────────────────
-function saveVisit() {
-  const filialIdx = parseInt(document.getElementById('filialSelect').value);
-  const date      = document.getElementById('visitDate').value;
-  const resp      = document.getElementById('visitResponsavel').value.trim();
-  const result    = document.getElementById('visitResult').value;
-  const obs       = document.getElementById('visitObs').value.trim();
-  const editId    = document.getElementById('visitEditId').value;
-
-  if (!resp || !date) { alert('Preencha responsável e data.'); return; }
-
-  const demandas = visitDemandasModal.map(d => ({
-    text: document.getElementById('dem-text-'+d.id)?.value.trim() || '',
-    status: document.getElementById('dem-status-'+d.id)?.value || 'open',
-    depTipo: document.getElementById('dem-dep-tipo-'+d.id)?.value || null,
-    depValor: document.getElementById('dem-dep-valor-'+d.id)?.value.trim() || null,
-  })).filter(d => d.text);
-
-  if (editId) {
-    const v = VISITS.find(x=>x.id===editId);
-    if (v) { v.filialIdx=filialIdx; v.date=date; v.responsavel=resp; v.result=result; v.temas=[...visitTags]; v.demandas=demandas; v.obs=obs; }
-  } else {
-    VISITS.push({ id:'v'+String(nextVisitId++).padStart(3,'0'), filialIdx, date, responsavel:resp, result, temas:[...visitTags], demandas, obs });
-  }
-
-  // atualiza status da filial
-  if (!isNaN(filialIdx)) {
-    FILIAIS[filialIdx].status = result;
-    markers[filialIdx]?.setIcon(createMarkerIcon(result, filialIdx===activeFilialIndex, isMarkerDimmed(FILIAIS[filialIdx])));
-    markers[filialIdx]?.setPopupContent(buildPopup(FILIAIS[filialIdx], filialIdx));
-  }
-  renderList(); updateStats();
-  closeVisitModal();
-  renderRecordsList();
-  if (activeRecordId) showRecordDetail(activeRecordId);
-}
-
 // ── MODAL DE VISITA: abrir/fechar/editar ─────────────────
-function openVisitModal() {
-  visitTags = [];
-  visitDemandasModal = [];
-  document.getElementById('visitEditId').value = '';
-  document.getElementById('visitModalTitle').textContent = 'Registrar Visita';
-  document.getElementById('visitModalSub').textContent = 'Preencha todos os dados da visita';
-  document.getElementById('visitDate').value = new Date().toISOString().split('T')[0];
-  document.getElementById('visitResponsavel').value = '';
-  document.getElementById('visitResult').value = 'visited';
-  document.getElementById('visitObs').value = '';
-  renderTagsUI();
-  renderDemandasModal();
-  document.getElementById('visitModalOverlay').classList.add('open');
-}
-
-function openVisitModalForFilial(idx) {
-  openVisitModal();
-  document.getElementById('filialSelect').value = idx;
-}
-
 function openEditVisitModal(id) {
   const v = VISITS.find(x=>x.id===id);
   if (!v) return;
@@ -2619,17 +2433,6 @@ function openEditVisitModal(id) {
   renderTagsUI();
   renderDemandasModal();
   document.getElementById('visitModalOverlay').classList.add('open');
-}
-
-function closeVisitModal() { document.getElementById('visitModalOverlay').classList.remove('open'); }
-
-function deleteVisit(id) {
-  if (!confirm('Excluir este registro de visita?')) return;
-  const idx = VISITS.findIndex(v=>v.id===id);
-  if (idx>=0) VISITS.splice(idx,1);
-  activeRecordId = null;
-  document.getElementById('recDetail').innerHTML = '<div class="rec-empty"><div class="rec-empty-icon">📋</div><div class="rec-empty-text">Selecione um registro para ver os detalhes</div></div>';
-  renderRecordsList();
 }
 
 // ── TAGS (temas) ──────────────────────────────────────────
@@ -2674,7 +2477,7 @@ function renderDemandasModal() {
   if (!visitDemandasModal.length) { list.innerHTML = ''; return; }
 
   const deptoOptions = DEPARTAMENTOS.map(d=>`<option value="${d}">${d}</option>`).join('');
-  const userOptions  = APP_USERS.map(u=>`<option value="${u.name}">${u.name}</option>`).join('');
+  const userOptions  = USERS.map(u=>`<option value="${u.name}">${u.name}</option>`).join('');
 
   list.innerHTML = visitDemandasModal.map(d => {
     const isDep = d.status === 'dep';
@@ -2728,18 +2531,10 @@ window.showView = function(view) {
 
 
 
-// ═══ NOTIFICAÇÕES (payload + dispatch) ══════════════════════════
+// ═══ NOTIFICAÇÕES ════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════
 // NOTIFICAÇÕES — CONFIG (persistente via window.storage)
 // ═══════════════════════════════════════════════════════════
-let NOTIF_CONFIG = {
-  globalEnabled: false,
-  recipients: [],          // lista de IDs de usuários
-  wa: { enabled:false, webhookUrl:'', token:'', target:'' },
-  tg: { enabled:false, botToken:'', chatId:'', webhookUrl:'' },
-  msgTemplate: ''
-};
-
 const DEFAULT_MSG_TEMPLATE =
 `📋 *Novo Relatório de Visita*
 
@@ -2757,30 +2552,6 @@ const DEFAULT_MSG_TEMPLATE =
 {observacoes}
 
 _Mensagem automática — VisitaFiliais_`;
-
-async function loadNotifConfig() {
-  try {
-    const r = await window.storage.get('notif_config');
-    if (r?.value) NOTIF_CONFIG = { ...NOTIF_CONFIG, ...JSON.parse(r.value) };
-  } catch(e) { /* primeira vez */ }
-  applyNotifConfigToUI();
-}
-
-async function saveNotifConfig() {
-  // lê campos da UI antes de salvar
-  const el = id => document.getElementById(id);
-  if (el('notifGlobalEnabled')) NOTIF_CONFIG.globalEnabled = el('notifGlobalEnabled').checked;
-  if (el('waEnabled'))          NOTIF_CONFIG.wa.enabled    = el('waEnabled').checked;
-  if (el('waWebhookUrl'))       NOTIF_CONFIG.wa.webhookUrl = el('waWebhookUrl').value.trim();
-  if (el('waToken'))            NOTIF_CONFIG.wa.token      = el('waToken').value.trim();
-  if (el('waTarget'))           NOTIF_CONFIG.wa.target     = el('waTarget').value.trim();
-  if (el('tgEnabled'))          NOTIF_CONFIG.tg.enabled    = el('tgEnabled').checked;
-  if (el('tgBotToken'))         NOTIF_CONFIG.tg.botToken   = el('tgBotToken').value.trim();
-  if (el('tgChatId'))           NOTIF_CONFIG.tg.chatId     = el('tgChatId').value.trim();
-  if (el('tgWebhookUrl'))       NOTIF_CONFIG.tg.webhookUrl = el('tgWebhookUrl').value.trim();
-  if (el('notifMsgTemplate'))   NOTIF_CONFIG.msgTemplate   = el('notifMsgTemplate').value;
-  try { await window.storage.set('notif_config', JSON.stringify(NOTIF_CONFIG)); } catch(e) {}
-}
 
 function applyNotifConfigToUI() {
   const el = id => document.getElementById(id);
@@ -2813,7 +2584,7 @@ function renderRecipientsList() {
     return;
   }
   container.innerHTML = NOTIF_CONFIG.recipients.map(uid => {
-    const u = APP_USERS.find(x=>x.id===uid);
+    const u = USERS.find(x=>x.id===uid);
     if (!u) return '';
     const meta = ROLE_META[u.role];
     return `<div class="recipient-row">
@@ -2832,7 +2603,7 @@ function renderRecipientSelect() {
   if (!sel) return;
   const existing = new Set(NOTIF_CONFIG.recipients);
   sel.innerHTML = '<option value="">Selecionar usuário para adicionar...</option>' +
-    APP_USERS.filter(u=>!existing.has(u.id)).map(u =>
+    USERS.filter(u=>!existing.has(u.id)).map(u =>
       `<option value="${u.id}">${u.name} — ${ROLE_META[u.role].label}</option>`
     ).join('');
 }
@@ -2944,81 +2715,7 @@ async function fireNotifications(visit) {
 }
 
 
-// ═══ showView / showPanel ═══════════════════════════════════
-window.showView = function(view){
-  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active','active-settings'));
-  document.getElementById('view-'+view).classList.add('active');
-  const tab=document.getElementById('tab-'+view);
-  if(tab)tab.classList.add(view==='settings'?'active-settings':'active');
-  if(view==='map')setTimeout(()=>map&&map.invalidateSize(),50);
-  if(view==='settings')renderFilialTable();
-  if(view==='records')renderRecordsList();
-};
-const _origShowPanel=showPanel;
-window.showPanel=function(panel,btn){
-  _origShowPanel(panel,btn);
-  if(panel==='notif')applyNotifConfigToUI();
-};
-
-// ── RASCUNHOS UI ──────────────────────────────────────────
-// ═══════════════════════════════════════════════════════════
-// RASCUNHOS — persistência por usuário via window.storage
-// ═══════════════════════════════════════════════════════════
-function getDraftKey() {
-  return `draft_visit_user${CURRENT_USER.id}`;
-}
-
-async function saveDraftToStorage(data) {
-  try { await window.storage.set(getDraftKey(), JSON.stringify(data)); } catch(e) {}
-}
-
-async function loadDraftFromStorage() {
-  try {
-    const r = await window.storage.get(getDraftKey());
-    return r?.value ? JSON.parse(r.value) : null;
-  } catch(e) { return null; }
-}
-
-async function clearDraftFromStorage() {
-  try { await window.storage.delete(getDraftKey()); } catch(e) {}
-}
-
-// ── CAPTURA DO ESTADO ATUAL DO MODAL ─────────────────────
-function captureModalState() {
-  const demandasSnap = visitDemandasModal.map(d => ({
-    id: d.id,
-    text:     document.getElementById('dem-text-'+d.id)?.value || '',
-    status:   document.getElementById('dem-status-'+d.id)?.value || 'open',
-    depTipo:  document.getElementById('dem-dep-tipo-'+d.id)?.value || null,
-    depValor: document.getElementById('dem-dep-valor-'+d.id)?.value || null,
-  }));
-  return {
-    filialIdx:   parseInt(document.getElementById('filialSelect')?.value) || 0,
-    date:        document.getElementById('visitDate')?.value || '',
-    responsavel: document.getElementById('visitResponsavel')?.value || '',
-    result:      document.getElementById('visitResult')?.value || 'visited',
-    obs:         document.getElementById('visitObs')?.value || '',
-    temas:       [...visitTags],
-    demandas:    demandasSnap,
-    editId:      document.getElementById('visitEditId')?.value || '',
-    savedAt:     new Date().toISOString(),
-  };
-}
-
-// ── SALVAR RASCUNHO ───────────────────────────────────────
-async function saveAsDraft() {
-  const state = captureModalState();
-  if (!state.responsavel && !state.obs && state.temas.length===0 && state.demandas.length===0) {
-    showToast('Preencha pelo menos um campo antes de salvar como rascunho.', 'warn');
-    return;
-  }
-  await saveDraftToStorage(state);
-  closeVisitModal();
-  await checkDraftBanner();
-  showToast('📝 Rascunho salvo com sucesso!', 'ok');
-}
-
+// ═══ RASCUNHO UI ═════════════════════════════════════════════
 // ── VERIFICAR E EXIBIR BANNER DE RASCUNHO ────────────────
 async function checkDraftBanner() {
   const draft = await loadDraftFromStorage();
@@ -3078,6 +2775,8 @@ async function discardDraft() {
 // ── AUTO-SAVE RASCUNHO (ao fechar modal sem salvar) ───────
 // Substituída pela ação explícita do botão "Salvar rascunho"
 
+
+// ═══ TOAST ═══════════════════════════════════════════════════
 // ═══════════════════════════════════════════════════════════
 // TOAST GENÉRICO
 // ═══════════════════════════════════════════════════════════
@@ -3105,35 +2804,6 @@ function showToast(msg, type='ok') {
 }
 
 
-// ── TOAST ─────────────────────────────────────────────────
-// ═══════════════════════════════════════════════════════════
-// TOAST GENÉRICO
-// ═══════════════════════════════════════════════════════════
-function showToast(msg, type='ok') {
-  const colors = {
-    ok:   { bg:'#111827', border:'#00d4aa', color:'#00d4aa' },
-    warn: { bg:'#111827', border:'#f59e0b', color:'#f59e0b' },
-    err:  { bg:'#111827', border:'#ef4444', color:'#ef4444' },
-    muted:{ bg:'#111827', border:'#263554', color:'#6b7a99' },
-  };
-  const c = colors[type] || colors.ok;
-  const el = document.createElement('div');
-  el.style.cssText = `position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(8px);
-    background:${c.bg};border:1px solid ${c.border};color:${c.color};
-    padding:11px 22px;border-radius:10px;font-size:13px;font-weight:500;
-    z-index:9999;box-shadow:0 4px 24px rgba(0,0,0,0.5);
-    transition:opacity 0.25s,transform 0.25s;opacity:0;pointer-events:none;white-space:nowrap;`;
-  el.textContent = msg;
-  document.body.appendChild(el);
-  requestAnimationFrame(() => { el.style.opacity='1'; el.style.transform='translateX(-50%) translateY(0)'; });
-  setTimeout(() => {
-    el.style.opacity='0'; el.style.transform='translateX(-50%) translateY(8px)';
-    setTimeout(()=>el.remove(), 300);
-  }, 3000);
-}
-
-
-
-window.doLogout = doLogout;
 </script>
+</body>
 </html>
