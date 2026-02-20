@@ -1234,7 +1234,7 @@ db.enablePersistence({ synchronizeTabs:true }).catch(()=>{});
 
 // ── ESTADO GLOBAL ─────────────────────────────────────────
 let FILIAIS  = [];
-let USERS    = [];
+let APP_USERS    = [];
 let VISITS   = [];
 let PROFILES = {};
 let CONFIG   = {
@@ -1944,7 +1944,7 @@ function applyDisplaySettings(){
   else if(sidebar&&sb.classList.contains('collapsed'))toggleSidebar();
 }
 
-// ═══ USERS ═══════════════════════════════════════════════════
+// ═══ APP_USERS ═══════════════════════════════════════════════════
 function getInitials(name){return name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();}
 
 function renderUsersGrid(){
@@ -2032,7 +2032,7 @@ function deleteUser(id){
   APP_USERS = APP_USERS.filter(u => u.id !== id); renderUsersGrid();
 }
 
-// ═══ USERS — state ═══════════════════════════════════════════
+// ═══ APP_USERS — state ═══════════════════════════════════════════
 let userRoleFilter = 'all';
 
 function setUserRoleFilter(role, btn) {
@@ -3133,5 +3133,7 @@ function showToast(msg, type='ok') {
 }
 
 
+
+window.doLogout = doLogout;
 </script>
 </html>
